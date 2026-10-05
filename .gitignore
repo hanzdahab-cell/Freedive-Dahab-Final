@@ -1,0 +1,14 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# local archives & dev logs
+*.zip
+
+# design source material (huge PSD/PDF originals)
+Web matrial/

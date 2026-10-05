@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <clipPath id="circle-de">
+      <circle cx="50" cy="50" r="50"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#circle-de)">
+    <!-- Black top band -->
+    <rect x="0" y="0" width="100" height="33.333" fill="#000000"/>
+    <!-- Red middle band -->
+    <rect x="0" y="33.333" width="100" height="33.334" fill="#DD0000"/>
+    <!-- Gold bottom band -->
+    <rect x="0" y="66.667" width="100" height="33.333" fill="#FFCE00"/>
+  </g>
+</svg>
