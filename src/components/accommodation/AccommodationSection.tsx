@@ -19,7 +19,7 @@ export function AccommodationSection({ onOpenBooking, currency }: AccommodationS
   };
 
   return (
-    <section id="accommodation" className="relative py-32 px-6 bg-[#020617] border-t border-white/5">
+    <section id="accommodation" className="relative py-32 px-6 bg-[#0E3453] border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
@@ -109,7 +109,7 @@ export function AccommodationSection({ onOpenBooking, currency }: AccommodationS
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-transparent to-transparent" />
               
               <div className="absolute top-4 right-4">
                 <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono text-cyan-300">
@@ -143,7 +143,7 @@ export function AccommodationSection({ onOpenBooking, currency }: AccommodationS
               <div className="pt-4 flex justify-end">
                 <button
                   onClick={onOpenBooking}
-                  className="px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all"
+                  className="px-6 py-3 rounded-xl bg-ocean hover:bg-ocean-light text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all"
                 >
                   <span>Book {activeRoom.title}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -191,7 +191,7 @@ export function AccommodationSection({ onOpenBooking, currency }: AccommodationS
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-transparent to-transparent" />
               
               <div className="absolute top-4 left-4">
                 <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-xs font-mono text-cyan-300 uppercase tracking-wider">
@@ -272,7 +272,7 @@ export function AccommodationSection({ onOpenBooking, currency }: AccommodationS
                 </div>
                 <button
                   onClick={onOpenBooking}
-                  className="px-4 py-2 rounded-lg bg-cyan-400 text-black text-xs font-mono font-bold uppercase tracking-wider hover:bg-cyan-300 transition-colors"
+                  className="px-4 py-2 rounded-lg bg-ocean-light text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-cyan-300 transition-colors"
                 >
                   SHOP INQUIRE
                 </button>

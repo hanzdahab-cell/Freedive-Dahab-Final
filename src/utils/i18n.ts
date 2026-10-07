@@ -149,6 +149,36 @@ export interface TranslationDictionary {
     depth15m: string;
     depth30m: string;
   };
+  intro: {
+    tagline: string;
+    enter: string;
+  };
+  descentStats: {
+    eyebrow: string;
+    title: string;
+    titleHighlight: string;
+    s1Label: string;
+    s1Desc: string;
+    s2Label: string;
+    s2Desc: string;
+    s3Label: string;
+    s3Desc: string;
+    s4Label: string;
+    s4Desc: string;
+    s5Label: string;
+    s5Desc: string;
+    s6Label: string;
+    s6Desc: string;
+  };
+  courseChapters: {
+    system: string;
+    core: string;
+    try: string;
+    pro: string;
+    numbersEyebrow: string;
+    ratioLabel: string;
+    countriesLabel: string;
+  };
   certificates: {
     badge: string;
     title: string;
@@ -493,6 +523,36 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       depth15m: '15M',
       depth30m: '30M+',
     },
+    intro: {
+      tagline: 'The journey to your deeper self begins with a single breath.',
+      enter: 'Click anywhere to dive in',
+    },
+    descentStats: {
+      eyebrow: 'Since 2003 · The first freediving school in Dahab',
+      title: 'OUR LEGACY',
+      titleHighlight: 'IN NUMBERS',
+      s1Label: 'Years in Dahab',
+      s1Desc: 'Pioneering freediving on the Lighthouse reef since 2002.',
+      s2Label: 'Courses & Programs',
+      s2Desc: 'From Try Freediving to Master and International Instructor ITC.',
+      s3Label: 'Instructor Graduates',
+      s3Desc: 'Now teaching in over 35 countries around the world.',
+      s4Label: 'Certified Freedivers',
+      s4Desc: 'With 100% individual coach attention and personal milestones.',
+      s5Label: 'Safety Record',
+      s5Desc: '24 years, zero decompression accidents on our lines.',
+      s6Label: 'Deepest Sanctuary Dive',
+      s6Desc: 'Blue Hole access with daily private training lines in Dahab.',
+    },
+    courseChapters: {
+      system: 'The SSI System',
+      core: 'Core Courses',
+      try: 'Specialty Clinics',
+      pro: 'Master & Pro',
+      numbersEyebrow: 'How deep each course takes you',
+      ratioLabel: 'Max students per instructor',
+      countriesLabel: 'Countries recognize SSI',
+    },
     certificates: {
       badge: 'SSI Official Partner • Facility #720079 • ISO 24801 & 24802',
       title: 'International Gold Standard of Freediving Education',
@@ -833,6 +893,36 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       depthSurface: 'السطح',
       depth15m: '15م',
       depth30m: '30م+',
+    },
+    intro: {
+      tagline: 'الرحلة نحو أعماقك تبدأ بنَفَس واحد.',
+      enter: 'اضغط في أي مكان للغوص',
+    },
+    descentStats: {
+      eyebrow: 'منذ 2003 · أول مدرسة غوص حر في دهب',
+      title: 'إرثنا',
+      titleHighlight: 'بالأرقام',
+      s1Label: 'عامًا في دهب',
+      s1Desc: 'ريادة الغوص الحر على شعاب المنارة منذ 2002.',
+      s2Label: 'دورة وبرنامجًا تدريبيًا',
+      s2Desc: 'من تجربة الغوص الحر حتى المدرب الدولي المعتمد.',
+      s3Label: 'خريج مدربين',
+      s3Desc: 'يدرّسون اليوم في أكثر من 35 دولة حول العالم.',
+      s4Label: 'غواص حر معتمد',
+      s4Desc: 'مع اهتمام فردي كامل من المدربين وتحقيق أهداف شخصية.',
+      s5Label: 'سجل السلامة',
+      s5Desc: '24 عامًا دون أي حوادث تخفيف ضغط على حبالنا.',
+      s6Label: 'أعمق غوص في المحمية',
+      s6Desc: 'وصول إلى ثقب الأزرق وحبال تدريب خاصة يوميًا في دهب.',
+    },
+    courseChapters: {
+      system: 'نظام SSI',
+      core: 'الدورات الأساسية',
+      try: 'البرامج التخصصية',
+      pro: 'الماستر والمحترفين',
+      numbersEyebrow: 'إلى أي عمق يأخذك كل دور',
+      ratioLabel: 'حد أقصى للطلاب لكل مدرب',
+      countriesLabel: 'دولة تعترف بشهادات SSI',
     },
     certificates: {
       badge: 'شريك SSI رسمي • منشأة #720079 • معايير ISO 24801 و 24802',
@@ -1175,6 +1265,36 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       depth15m: '15M',
       depth30m: '30M+',
     },
+    intro: {
+      tagline: 'El viaje hacia tu yo más profundo comienza con un solo aliento.',
+      enter: 'Haz clic en cualquier lugar para sumergirte',
+    },
+    descentStats: {
+      eyebrow: 'Desde 2003 · La primera escuela de apnea en Dahab',
+      title: 'NUESTRO LEGADO',
+      titleHighlight: 'EN NÚMEROS',
+      s1Label: 'Años en Dahab',
+      s1Desc: 'Pioneros de la apnea en el arrecife Lighthouse desde 2002.',
+      s2Label: 'Cursos y programas',
+      s2Desc: 'Desde Try Freediving hasta Instructor Internacional ITC.',
+      s3Label: 'Instructores graduados',
+      s3Desc: 'Ahora enseñan en más de 35 países del mundo.',
+      s4Label: 'Apneistas certificados',
+      s4Desc: 'Con atención individual del entrenador y metas personales.',
+      s5Label: 'Récord de seguridad',
+      s5Desc: '24 años sin accidentes de descompresión en nuestras líneas.',
+      s6Label: 'Inmersión más profunda',
+      s6Desc: 'Acceso al Blue Hole con líneas privadas de entrenamiento diarias en Dahab.',
+    },
+    courseChapters: {
+      system: 'El sistema SSI',
+      core: 'Cursos principales',
+      try: 'Especialidades',
+      pro: 'Master y Pro',
+      numbersEyebrow: 'Hasta dónde te lleva cada curso',
+      ratioLabel: 'Máx. estudiantes por instructor',
+      countriesLabel: 'Países reconocen SSI',
+    },
     certificates: {
       badge: 'Partner Oficial SSI • Instalación #720079 • Normas ISO 24801 y 24802',
       title: 'El Estándar Internacional de Oro en Formación de Apnea',
@@ -1515,6 +1635,36 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       depthSurface: 'OBERFLÄCHE',
       depth15m: '15M',
       depth30m: '30M+',
+    },
+    intro: {
+      tagline: 'Die Reise zu deinem tieferen Ich beginnt mit einem einzigen Atemzug.',
+      enter: 'Klicke irgendwo, um abzutauchen',
+    },
+    descentStats: {
+      eyebrow: 'Seit 2003 · Die erste Freediving-Schule in Dahab',
+      title: 'TIEFE',
+      titleHighlight: 'IN ZAHLEN',
+      s1Label: 'Jahre in Dahab',
+      s1Desc: 'Freediving-Pionier am Lighthouse-Riff seit 2002.',
+      s2Label: 'Kurse & Programme',
+      s2Desc: 'Vom Try Freediving bis zum internationalen Instructor ITC.',
+      s3Label: 'Ausbildete Instructors',
+      s3Desc: 'Unterrichten heute in über 35 Ländern weltweit.',
+      s4Label: 'Zertifizierte Freediver',
+      s4Desc: 'Mit 100 % individueller Betreuung und persönlichen Meilensteinen.',
+      s5Label: 'Sicherheitsbilanz',
+      s5Desc: '24 Jahre ohne Dekompressionsunfälle an unseren Leinen.',
+      s6Label: 'Tiefster Sanctuary-Tauchgang',
+      s6Desc: 'Blue-Hole-Zugang mit täglichen privaten Trainingsleinen in Dahab.',
+    },
+    courseChapters: {
+      system: 'Das SSI-System',
+      core: 'Kernkurse',
+      try: 'Spezialkurse',
+      pro: 'Master & Pro',
+      numbersEyebrow: 'Wie tief dich jeder Kurs bringt',
+      ratioLabel: 'Max. Schüler pro Instructor',
+      countriesLabel: 'Länder erkennen SSI an',
     },
     certificates: {
       badge: 'SSI Offizieller Partner • Zentrum #720079 • ISO 24801 & 24802',

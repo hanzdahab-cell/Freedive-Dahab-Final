@@ -90,7 +90,7 @@ export function DahabBlueHoleSection({ onNavigate }: DahabBlueHoleSectionProps) 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-transparent to-transparent" />
               </div>
               <figcaption className="absolute bottom-4 left-4 right-4 text-xs font-alata text-slate-200 tracking-wide uppercase">
                 {photo.caption}
@@ -103,7 +103,7 @@ export function DahabBlueHoleSection({ onNavigate }: DahabBlueHoleSectionProps) 
         <div className="flex justify-center">
           <button
             onClick={() => onNavigate('experience')}
-            className="px-8 py-3.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-bold uppercase tracking-[0.12em] transition-all shadow-lg shadow-cyan-500/25 flex items-center gap-2 cursor-pointer hover:scale-105"
+            className="px-8 py-3.5 rounded-full bg-ocean hover:bg-ocean-light text-white text-xs font-bold uppercase tracking-[0.12em] transition-all shadow-lg shadow-cyan-500/25 flex items-center gap-2 cursor-pointer hover:scale-105"
           >
             <span>Explore Expeditions & Safaris</span>
             <ArrowRight className="w-4 h-4" />

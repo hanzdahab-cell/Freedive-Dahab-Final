@@ -12,3 +12,6 @@ coverage/
 
 # design source material (huge PSD/PDF originals)
 Web matrial/
+
+# user raw material dropped in public (not site assets)
+"public/The videos and Pngs/"

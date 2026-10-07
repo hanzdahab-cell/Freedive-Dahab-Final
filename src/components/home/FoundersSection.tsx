@@ -56,7 +56,7 @@ export function FoundersSection({ onNavigate }: FoundersSectionProps = {}) {
   return (
     <section
       id="founders"
-      className="relative overflow-hidden bg-[#020912] px-6 py-24 sm:py-32"
+      className="relative overflow-hidden bg-[#0E3453] px-6 py-24 sm:py-32"
     >
       {/* Ambient background */}
       <div className="pointer-events-none absolute -left-40 top-1/4 h-[500px] w-[500px] rounded-full bg-cyan-500/[0.04] blur-[140px]" />
@@ -93,7 +93,7 @@ export function FoundersSection({ onNavigate }: FoundersSectionProps = {}) {
                 onClick={() =>
                   setActiveFounder(isActive ? null : founder.id)
                 }
-                className="group relative h-[560px] cursor-pointer overflow-hidden rounded-[28px] border border-white/10 bg-[#07111b] transition-all duration-700 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_30px_100px_rgba(0,0,0,0.45)]"
+                className="group relative h-[560px] cursor-pointer overflow-hidden rounded-[28px] border border-white/10 bg-[#0E3453] transition-all duration-700 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_30px_100px_rgba(0,0,0,0.45)]"
                 style={{
                   animationDelay: `${index * 120}ms`,
                 }}
@@ -110,7 +110,7 @@ export function FoundersSection({ onNavigate }: FoundersSectionProps = {}) {
                 {/* Image protection / readability overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90" />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020912] via-transparent to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-transparent to-transparent opacity-90" />
 
                 {/* Top information */}
                 <div className="absolute left-5 right-5 top-5 flex items-center justify-between">

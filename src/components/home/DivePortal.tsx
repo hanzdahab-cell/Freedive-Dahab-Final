@@ -87,7 +87,7 @@ export function DivePortal({ onOpenBooking }: DivePortalProps) {
     <section 
       id="portal" 
       ref={containerRef}
-      className="relative min-h-[180vh] md:min-h-[220vh] w-full bg-[#020617] text-white"
+      className="relative min-h-[180vh] md:min-h-[220vh] w-full bg-[#0E3453] text-white"
     >
       {/* Sticky Fullscreen Dive Stage */}
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between select-none">
@@ -95,7 +95,7 @@ export function DivePortal({ onOpenBooking }: DivePortalProps) {
         {/* ======================================================== */}
         {/* LAYER 1 (UNDERNEATH): Deep Midnight Ocean View (The Abyss) */}
         {/* ======================================================== */}
-        <div className="absolute inset-0 z-0 bg-[#020617]">
+        <div className="absolute inset-0 z-0 bg-[#0E3453]">
           <img
             src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2400&q=90"
             alt="Freedivers in the deep blue abyss looking up toward sunlight"
@@ -107,7 +107,7 @@ export function DivePortal({ onOpenBooking }: DivePortalProps) {
           />
           
           {/* Deep Ocean Midnight Vignette */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/70 via-transparent to-[#020617]/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E3453]/70 via-transparent to-[#0E3453]/90" />
 
           {/* Bioluminescent Particles & Caustic Sparkles */}
           <div className="absolute inset-0 opacity-40 pointer-events-none mix-blend-screen">
@@ -139,7 +139,7 @@ export function DivePortal({ onOpenBooking }: DivePortalProps) {
           <div className="absolute inset-0 bg-cyan-950/20 mix-blend-multiply" />
           
           {/* Surface Water Caustic Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453]/80 via-transparent to-transparent" />
         </div>
 
         {/* ======================================================== */}

@@ -378,8 +378,8 @@ export const specialtyCourses: SpecialtyCourse[] = [
     keySkills: ["Core wave movement", "Ankle flexibility drills", "Glide phases", "Video biomechanics analysis"],
     fullDesc: "The monofin is the ultimate freediving tool. Under the guidance of our biomechanics specialists, learn how to generate immense power with minimal oxygen consumption by driving the kick from your chest and hips rather than knees.",
     image: {
-      url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-      alt: "Freediver gliding effortlessly with carbon monofin in turquoise sea"
+      url: "/courses/monofin.jpg",
+      alt: "SSI Monofin — freediver dolphin-kicking over a school of fish"
     }
   },
   {
@@ -409,8 +409,8 @@ export const specialtyCourses: SpecialtyCourse[] = [
     keySkills: ["Sled braking control", "Rapid equalisation timing", "Deep turnaround mechanics", "Safety tether rigging"],
     fullDesc: "Variable weight allows you to descend with zero muscular exertion, dedicating 100% of your mental focus to equalisation and deep relaxation, before ascending under your own serene fin strokes.",
     image: {
-      url: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=1200&q=80",
-      alt: "Deep blue vertical line descending into the Dahab Blue Hole"
+      url: "/courses/variable-weight.jpg",
+      alt: "SSI Variable Weight — freediver descending the deep Blue Hole line"
     }
   },
   {
@@ -439,8 +439,8 @@ export const specialtyCourses: SpecialtyCourse[] = [
     keySkills: ["CO2 & O2 table architecture", "Dry lung volume stretches", "Heart rate variability optimization", "Diet & hydration protocols"],
     fullDesc: "How champion freedivers stay conditioned even when away from the ocean. Learn how to program safe dry apnea training, neuro-respiratory adaptations, and recovery routines.",
     image: {
-      url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80",
-      alt: "Freediver practicing breathwork and stretching on Dahab coastal terrace"
+      url: "/courses/training-techniques.jpg",
+      alt: "SSI Training Techniques — freediver practicing breathwork on a Dahab terrace"
     }
   },
   {
@@ -454,8 +454,68 @@ export const specialtyCourses: SpecialtyCourse[] = [
     keySkills: ["Primary assessment & CPR", "Automated External Defibrillator (AED)", "Oxygen administration for barotrauma / blackout", "Dahab decompression chamber coordination"],
     fullDesc: "Essential medical knowledge for any serious diver or prospective instructor. Covers immediate hypoxic blackout recovery, neuro-evaluations, and coordination with local medical resources.",
     image: {
-      url: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=1200&q=80",
-      alt: "Medical emergency responder first aid training gear and oxygen system"
+      url: "/courses/react-right.jpg",
+      alt: "SSI React Right — emergency first response training"
+    }
+  },
+  {
+    id: "spec-free-immersion",
+    slug: "free-immersion",
+    title: "SSI Free Immersion (FIM)",
+    shortDesc: "Dive the line with pure arm-pulls — no fins. The most meditative discipline and the fastest way to perfect equalization.",
+    durationDays: 1,
+    priceEur: 190,
+    prerequisites: "SSI Level 1 (or equivalent) — comfortable with Frenzel equalization.",
+    keySkills: [
+      "Rope technique & breaststroke pull",
+      "Head-down (inverted) Frenzel equalization",
+      "Streamlined body position & hip drive",
+      "Line safety & bottom-weight protocol"
+    ],
+    fullDesc: "Free Immersion (FIM) is the discipline of diving along the guide rope using arm strokes only — slow, silent, and elegant. Because the pace is calm and the line is always in your hand, it is the perfect discipline to perfect your equalization and body position. Most freedivers fall in love with depth here first.",
+    image: {
+      url: "/courses/free-immersion.jpg",
+      alt: "SSI Free Immersion — freediver pulling down the line in deep blue water"
+    }
+  },
+  {
+    id: "spec-marine-ecology",
+    slug: "marine-ecology",
+    title: "SSI Marine Ecology",
+    shortDesc: "Meet the Red Sea's residents — reef fish, corals, and the ecosystem that keeps them alive. A theory specialty for every ocean lover.",
+    durationDays: 1,
+    priceEur: 150,
+    prerequisites: "None — open to everyone, no diving required.",
+    keySkills: [
+      "Coral reef ecosystems & food webs",
+      "Fish identification — Red Sea endemic species",
+      "Symbiosis, predators & defense strategies",
+      "Conservation & how freedivers protect the reef"
+    ],
+    fullDesc: "The Red Sea is one of the most biodiverse seas on the planet — over 20% of its fish exist nowhere else on Earth. This SSI Marine Ecology program is classroom-based: no dives required, just curiosity. Learn how coral reefs work, who eats whom, and why Dahab's reefs deserve protection — taught by instructors who spend every day on this exact reef.",
+    image: {
+      url: "/courses/marine-ecology.jpg",
+      alt: "SSI Marine Ecology — Red Sea hawkfish close-up on coral"
+    }
+  },
+  {
+    id: "master-freediver",
+    slug: "master-freediver",
+    title: "SSI Master Freediver",
+    shortDesc: "The apex recreational certification — mouthfill, freefall, and deep rescue toward 30–40m, plus a personal training plan.",
+    durationDays: 4,
+    priceEur: 475,
+    prerequisites: "SSI Level 2 (Advanced Freediver) or equivalent, React Right recommended, minimum age 16.",
+    keySkills: [
+      "Mouthfill equalization beyond residual volume",
+      "Controlled freefall & relaxation past 30m",
+      "Advanced rescue & blackout management",
+      "CO2/O2 tables & personal training-plan design"
+    ],
+    fullDesc: "The SSI Master Freediver program is where recreational freediving becomes an art: warm-up tables, mouthfill equalization, controlled freefall, and deep rescue. You leave with a personal training plan and the confidence to keep progressing safely on your own — the gateway to the professional academy.",
+    image: {
+      url: "/courses/master-freediver.jpg",
+      alt: "SSI Master Freediver — monofin freediver ascending between canyon walls in the Blue Hole"
     }
   }
 ];
@@ -499,8 +559,8 @@ export const instructorCourses: InstructorCourse[] = [
     ],
     internshipOption: true,
     image: {
-      url: "/courses/freediving-instructor.jpg",
-      alt: "SSI Freediving Instructor — instructor gliding along a vivid coral reef wall"
+      url: "/courses/freediving-instructor-itc.jpg",
+      alt: "SSI Freediving Instructor Training Course — instructor gliding over a Red Sea wreck"
     }
   },
   {

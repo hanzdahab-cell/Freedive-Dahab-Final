@@ -101,16 +101,20 @@ export function LetterReveal({
       {wholeLine
         ? text
         : words!.map((word, wi) => (
-            <span key={wi} className="lr-word" style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-              {word.split('').map((ch, li) => (
-                <span
-                  key={li}
-                  className="lr-letter"
-                  style={{ display: 'inline-block', willChange: 'transform, opacity' }}
-                >
-                  {ch}
-                </span>
-              ))}
+            <span key={wi}>
+              <span className="lr-word" style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+                {word.split('').map((ch, li) => (
+                  <span
+                    key={li}
+                    className="lr-letter"
+                    style={{ display: 'inline-block', willChange: 'transform, opacity' }}
+                  >
+                    {ch}
+                  </span>
+                ))}
+              </span>
+              {/* Space lives BETWEEN the inline-block words — a trailing space
+                  inside an inline-block collapses to zero width */}
               {wi < words!.length - 1 ? ' ' : null}
             </span>
           ))}

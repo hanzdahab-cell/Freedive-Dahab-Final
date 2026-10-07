@@ -12,7 +12,7 @@ export function Footer() {
   const { footer } = storyConfig.site;
 
   return (
-    <footer className="relative py-20 px-6 md:px-12 bg-[#061826] border-t border-white/10 overflow-hidden text-slate-300">
+    <footer className="relative py-20 px-6 md:px-12 bg-[#0E3453] border-t border-white/10 overflow-hidden text-slate-300">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           {/* Brand & Note */}

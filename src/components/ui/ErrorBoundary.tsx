@@ -40,8 +40,8 @@ export class ErrorBoundary extends Component<Props, State> {
       }
 
       return (
-        <div className="min-h-screen bg-[#02070b] text-white flex items-center justify-center p-6">
-          <div className="max-w-md w-full rounded-2xl border border-white/10 bg-[#07111b] p-8 text-center shadow-2xl">
+        <div className="min-h-screen bg-[#0E3453] text-white flex items-center justify-center p-6">
+          <div className="max-w-md w-full rounded-2xl border border-white/10 bg-[#0E3453] p-8 text-center shadow-2xl">
             <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-cyan-500/20 bg-cyan-500/10 text-cyan-400">
               <AlertCircle className="h-7 w-7" />
             </div>
@@ -68,7 +68,7 @@ export class ErrorBoundary extends Component<Props, State> {
               <button
                 type="button"
                 onClick={this.handleReload}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-500 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-black transition hover:bg-cyan-400"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-ocean px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-ocean-light"
               >
                 <RefreshCw className="h-3.5 w-3.5" />
                 Refresh Page

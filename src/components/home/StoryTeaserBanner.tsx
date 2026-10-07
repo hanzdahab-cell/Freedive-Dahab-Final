@@ -97,7 +97,7 @@ export function StoryTeaserBanner({ onNavigate }: StoryTeaserBannerProps) {
           <div className="flex items-center">
             <button
               onClick={() => onNavigate('story')}
-              className="px-7 py-3.5 rounded-full bg-white text-[#020811] hover:bg-slate-100 font-alata text-xs sm:text-sm font-semibold uppercase tracking-[0.08em] transition-all duration-200 flex items-center gap-2 cursor-pointer hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:scale-105"
+              className="px-7 py-3.5 rounded-full bg-white text-[#0E3453] hover:bg-slate-100 font-alata text-xs sm:text-sm font-semibold uppercase tracking-[0.08em] transition-all duration-200 flex items-center gap-2 cursor-pointer hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:scale-105"
             >
               <span>Explore Our Story</span>
               <ArrowRight className="w-4 h-4" />
@@ -181,7 +181,7 @@ export function StoryTeaserBanner({ onNavigate }: StoryTeaserBannerProps) {
 
           <button
             onClick={() => onNavigate('story')}
-            className="shrink-0 px-6 py-3 rounded-full bg-cyan-400 hover:bg-cyan-300 text-[#020b14] font-semibold text-xs font-alata tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(56,189,248,0.25)] hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] cursor-pointer"
+            className="shrink-0 px-6 py-3 rounded-full bg-cyan-400 hover:bg-cyan-300 text-[#0E3453] font-semibold text-xs font-alata tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(56,189,248,0.25)] hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] cursor-pointer"
           >
             Read Our Full Story
           </button>

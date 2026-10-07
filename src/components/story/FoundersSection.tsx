@@ -99,7 +99,7 @@ export function FoundersSection() {
   return (
     <section
       id="founders"
-      className="relative py-32 md:py-44 px-6 md:px-12 bg-gradient-to-b from-[#071B2B] via-[#0B2A3C] to-[#061826] overflow-hidden"
+      className="relative py-32 md:py-44 px-6 md:px-12 bg-gradient-to-b from-[#0E3453] via-[#0E3453] to-[#0E3453] overflow-hidden"
     >
       {/* Wave Transition Top */}
       <div aria-hidden="true" className="absolute top-0 left-0 right-0 overflow-hidden leading-none pointer-events-none -translate-y-[98%]">
@@ -107,7 +107,7 @@ export function FoundersSection() {
           viewBox="0 0 1440 60"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-10 md:h-16 text-[#071B2B]"
+          className="w-full h-10 md:h-16 text-[#0E3453]"
         >
           <path
             d="M0,40 C400,10 700,50 1100,20 C1280,10 1380,35 1440,40 L1440,60 L0,60 Z"
@@ -185,7 +185,7 @@ export function FoundersSection() {
                     />
 
                     {/* Gradient scrims for high contrast text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#061826] via-[#061826]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-[#0E3453]/40 to-transparent" />
                     <div className="absolute inset-0 bg-radial-at-b from-[#2EC4B6]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   </motion.div>
 
@@ -232,14 +232,14 @@ export function FoundersSection() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.35 }}
               onClick={() => setSelectedFounderId(null)}
-              className="fixed inset-0 bg-[#061826]/90 backdrop-blur-2xl"
+              className="fixed inset-0 bg-[#0E3453]/90 backdrop-blur-2xl"
             />
 
             {/* Modal Body Container with Shared Element Card */}
             <motion.div
               ref={modalRef}
               layoutId={`founder-card-${selectedFounder.id}`}
-              className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#091F30] border border-white/15 shadow-2xl text-left z-10 flex flex-col lg:flex-row my-auto"
+              className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#0E3453] border border-white/15 shadow-2xl text-left z-10 flex flex-col lg:flex-row my-auto"
             >
               {/* Top Controls: Close button + Stepper */}
               <div className="absolute top-4 right-4 z-30 flex items-center gap-2">
@@ -293,7 +293,7 @@ export function FoundersSection() {
                       className="w-full h-full object-cover"
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#091F30] via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-transparent to-transparent opacity-80" />
                 </motion.div>
 
                 {/* Extra Photos Carousel Dots if available */}

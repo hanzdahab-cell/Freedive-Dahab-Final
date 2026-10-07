@@ -88,7 +88,7 @@ export function EventDetailPage({
   const availableMonths = Array.from(new Set(eventDates.map((d) => d.monthName)));
 
   return (
-    <div className="relative min-h-screen bg-[#020813] text-slate-100 pb-32">
+    <div className="relative min-h-screen bg-[#0E3453] text-slate-100 pb-32">
       
       {/* Subtle Ambient Background Gradients */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[550px] bg-cyan-600/[0.06] blur-[180px] pointer-events-none rounded-full" />
@@ -118,7 +118,7 @@ export function EventDetailPage({
           
           <button
             onClick={() => onOpenBooking(event.id)}
-            className="px-4 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-wider transition-all shadow-md shadow-cyan-500/20 cursor-pointer"
+            className="px-4 py-1.5 rounded-lg bg-ocean hover:bg-ocean-light text-white font-bold uppercase tracking-wider transition-all shadow-md shadow-cyan-500/20 cursor-pointer"
           >
             Instant Registration
           </button>
@@ -157,7 +157,7 @@ export function EventDetailPage({
 
             {/* Quick Specs Matrix */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 pt-2">
-              <div className="p-3.5 rounded-xl bg-[#040e1c] border border-white/10 space-y-1">
+              <div className="p-3.5 rounded-xl bg-[#0E3453] border border-white/10 space-y-1">
                 <span className="text-[10px] font-mono uppercase text-slate-400 tracking-wider flex items-center gap-1">
                   <Clock className="w-3 h-3 text-cyan-400" />
                   <span>Duration</span>
@@ -167,7 +167,7 @@ export function EventDetailPage({
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-[#040e1c] border border-white/10 space-y-1">
+              <div className="p-3.5 rounded-xl bg-[#0E3453] border border-white/10 space-y-1">
                 <span className="text-[10px] font-mono uppercase text-slate-400 tracking-wider flex items-center gap-1">
                   <Compass className="w-3 h-3 text-cyan-400" />
                   <span>Depth Scope</span>
@@ -177,7 +177,7 @@ export function EventDetailPage({
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-[#040e1c] border border-white/10 space-y-1">
+              <div className="p-3.5 rounded-xl bg-[#0E3453] border border-white/10 space-y-1">
                 <span className="text-[10px] font-mono uppercase text-slate-400 tracking-wider flex items-center gap-1">
                   <Award className="w-3 h-3 text-cyan-400" />
                   <span>License</span>
@@ -187,7 +187,7 @@ export function EventDetailPage({
                 </div>
               </div>
 
-              <div className="col-span-2 sm:col-span-3 p-3.5 rounded-xl bg-[#040e1c] border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="col-span-2 sm:col-span-3 p-3.5 rounded-xl bg-[#0E3453] border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
                   <span className="text-[10px] font-mono uppercase text-slate-400 tracking-wider">
                     Investment
@@ -207,7 +207,7 @@ export function EventDetailPage({
                   </a>
                   <button
                     onClick={() => onOpenBooking(event.id)}
-                    className="px-5 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-cyan-500/20 text-center"
+                    className="px-5 py-2 rounded-lg bg-ocean hover:bg-ocean-light text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-cyan-500/20 text-center"
                   >
                     Register Now
                   </button>
@@ -225,7 +225,7 @@ export function EventDetailPage({
                 alt={event.title}
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020813] via-[#020813]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-[#0E3453]/30 to-transparent" />
               
               {/* Bottom Card Overlay */}
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs font-sans space-y-1.5">
@@ -247,7 +247,7 @@ export function EventDetailPage({
       {/* 3. SCHEDULED DATES (2026) FULL CALENDAR BREAKDOWN        */}
       {/* ======================================================== */}
       <section id="dates-section" className="relative z-10 px-4 sm:px-8 py-16 max-w-7xl mx-auto">
-        <div className="p-6 sm:p-10 rounded-3xl bg-[#030d1d] border border-cyan-500/20 shadow-2xl space-y-8">
+        <div className="p-6 sm:p-10 rounded-3xl bg-[#0E3453] border border-cyan-500/20 shadow-2xl space-y-8">
           
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10">
@@ -270,7 +270,7 @@ export function EventDetailPage({
                 onClick={() => setSelectedMonthFilter('all')}
                 className={`px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider transition-all cursor-pointer ${
                   selectedMonthFilter === 'all'
-                    ? 'bg-cyan-500 text-black font-bold'
+                    ? 'bg-ocean text-white font-bold'
                     : 'bg-white/5 text-slate-300 hover:text-white border border-white/10'
                 }`}
               >
@@ -282,7 +282,7 @@ export function EventDetailPage({
                   onClick={() => setSelectedMonthFilter(m)}
                   className={`px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider transition-all cursor-pointer ${
                     selectedMonthFilter === m
-                      ? 'bg-cyan-500 text-black font-bold'
+                      ? 'bg-ocean text-white font-bold'
                       : 'bg-white/5 text-slate-300 hover:text-white border border-white/10'
                   }`}
                 >
@@ -325,14 +325,14 @@ export function EventDetailPage({
                       ? 'bg-cyan-950/40 border-cyan-400/60 shadow-[0_0_25px_rgba(56,189,248,0.25)] ring-1 ring-cyan-400/40'
                       : isPast
                       ? 'bg-black/30 border-white/5 opacity-60'
-                      : 'bg-[#040e1d] border-white/10 hover:border-cyan-400/40 hover:bg-[#061429]'
+                      : 'bg-[#0E3453] border-white/10 hover:border-cyan-400/40 hover:bg-[#0E3453]'
                   }`}
                 >
                   {/* Left: Date & Status */}
                   <div className="flex items-start sm:items-center gap-4">
                     <div className={`w-14 h-14 rounded-xl flex flex-col items-center justify-center shrink-0 border ${
                       isCurrent
-                        ? 'bg-cyan-500 text-black border-cyan-400 font-bold'
+                        ? 'bg-ocean text-white border-cyan-400 font-bold'
                         : isPast
                         ? 'bg-slate-900 text-slate-500 border-white/5'
                         : 'bg-white/5 text-white border-white/10'
@@ -348,7 +348,7 @@ export function EventDetailPage({
                         </span>
                         
                         {isCurrent && (
-                          <span className="px-2 py-0.5 rounded-full bg-cyan-400 text-black font-mono text-[10px] font-black uppercase tracking-wider flex items-center gap-1">
+                          <span className="px-2 py-0.5 rounded-full bg-ocean-light text-white font-mono text-[10px] font-black uppercase tracking-wider flex items-center gap-1">
                             <span className="w-1.5 h-1.5 rounded-full bg-black animate-ping" />
                             Active Now
                           </span>
@@ -407,7 +407,7 @@ export function EventDetailPage({
                       className={`px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 ${
                         isPast
                           ? 'bg-white/5 text-slate-500 cursor-not-allowed border border-white/5'
-                          : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-md shadow-cyan-500/20 cursor-pointer'
+                          : 'bg-ocean hover:bg-ocean-light text-white shadow-md shadow-cyan-500/20 cursor-pointer'
                       }`}
                     >
                       <span>{isPast ? 'Completed' : 'Book Date'}</span>
@@ -443,7 +443,7 @@ export function EventDetailPage({
               {event.courseCurriculum.map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-5 rounded-2xl bg-[#030d1d] border border-white/10 space-y-2 hover:border-cyan-400/30 transition-colors"
+                  className="p-5 rounded-2xl bg-[#0E3453] border border-white/10 space-y-2 hover:border-cyan-400/30 transition-colors"
                 >
                   <div className="flex items-center gap-2.5">
                     <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px] font-bold uppercase tracking-wider">
@@ -465,7 +465,7 @@ export function EventDetailPage({
           <div className="lg:col-span-5 space-y-6">
             
             {/* What's Included */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#030d1d] border border-white/10 space-y-6">
+            <div className="p-6 sm:p-8 rounded-3xl bg-[#0E3453] border border-white/10 space-y-6">
               <div className="space-y-1">
                 <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4" />
@@ -487,7 +487,7 @@ export function EventDetailPage({
             </div>
 
             {/* Prerequisites & Equipment */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#040e1f] border border-white/10 space-y-4 text-xs font-sans">
+            <div className="p-6 sm:p-8 rounded-3xl bg-[#0E3453] border border-white/10 space-y-4 text-xs font-sans">
               <h4 className="text-base font-serif font-bold text-white flex items-center gap-2">
                 <Shield className="w-4 h-4 text-cyan-400" />
                 <span>Prerequisites &amp; Gear</span>
@@ -513,7 +513,7 @@ export function EventDetailPage({
       {/* 5. CUSTOM DATE INQUIRY & CONTACT FORM (ON EVERY EVENT)    */}
       {/* ======================================================== */}
       <section className="relative z-10 px-4 sm:px-8 pt-10 pb-16 max-w-5xl mx-auto">
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#051329] to-[#020b18] border border-cyan-400/40 shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative overflow-hidden">
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#0E3453] to-[#0E3453] border border-cyan-400/40 shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative overflow-hidden">
           
           <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 blur-3xl pointer-events-none" />
 
@@ -619,7 +619,7 @@ export function EventDetailPage({
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full sm:w-auto px-8 py-3 rounded-xl bg-ocean hover:bg-ocean-light text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Request Custom Dates</span>
                     <Send className="w-3.5 h-3.5" />

@@ -43,7 +43,7 @@ function Fish({ className = '', color = '#67e8f9' }: { className?: string; color
     <svg viewBox="0 0 32 16" fill="none" className={`ci-fish ${className}`} aria-hidden="true">
       <path d="M2 8c4-5.5 12-5.5 17 0-5 5.5-13 5.5-17 0Z" fill={color} opacity="0.85" />
       <path d="M19 8l10-5.5v11L19 8Z" fill={color} opacity="0.55" />
-      <circle cx="7.5" cy="7" r="1.3" fill="#020617" />
+      <circle cx="7.5" cy="7" r="1.3" fill="#0E3453" />
     </svg>
   );
 }

@@ -110,7 +110,7 @@ export function TrainingSection({ onOpenBooking, currency = 'EUR', onNavigate }:
   };
 
   return (
-    <section id="training" className="relative py-24 sm:py-32 px-6 bg-[#030914] text-slate-100 overflow-hidden border-t border-white/5">
+    <section id="training" className="relative py-24 sm:py-32 px-6 bg-[#0E3453] text-slate-100 overflow-hidden border-t border-white/5">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
@@ -161,7 +161,7 @@ export function TrainingSection({ onOpenBooking, currency = 'EUR', onNavigate }:
         </div>
 
         {/* Active Module Display */}
-        <div className="bg-gradient-to-br from-[#08121e]/90 to-[#040911]/90 border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl backdrop-blur-md">
+        <div className="bg-gradient-to-br from-[#0E3453]/90 to-[#0E3453]/90 border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl backdrop-blur-md">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Content */}

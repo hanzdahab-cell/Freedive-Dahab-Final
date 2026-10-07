@@ -14,7 +14,7 @@ export function PackagesSection({ onOpenBooking, currency }: PackagesSectionProp
   };
 
   return (
-    <section id="packages" className="relative py-32 px-6 bg-[#020617] border-t border-white/5">
+    <section id="packages" className="relative py-32 px-6 bg-[#0E3453] border-t border-white/5">
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Section Header */}
@@ -48,12 +48,12 @@ export function PackagesSection({ onOpenBooking, currency }: PackagesSectionProp
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-transparent to-transparent" />
                   
                   {/* Badge */}
                   {pkg.badge && (
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 rounded-full bg-cyan-500 text-black text-[10px] font-mono font-bold tracking-widest uppercase shadow-lg">
+                      <span className="px-3 py-1 rounded-full bg-ocean text-white text-[10px] font-mono font-bold tracking-widest uppercase shadow-lg">
                         {pkg.badge}
                       </span>
                     </div>
@@ -104,7 +104,7 @@ export function PackagesSection({ onOpenBooking, currency }: PackagesSectionProp
               <div className="p-6 sm:p-8 pt-0">
                 <button
                   onClick={() => onOpenBooking(pkg.id)}
-                  className="w-full py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3.5 rounded-xl bg-ocean hover:bg-ocean-light text-white text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2"
                 >
                   <span>Book This Package</span>
                   <ArrowRight className="w-4 h-4" />

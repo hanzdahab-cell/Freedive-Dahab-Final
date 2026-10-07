@@ -45,7 +45,7 @@ export function FAQSection() {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-3 py-1.5 rounded-full text-xs font-mono transition-all ${
                   activeCategory === cat.id
-                    ? 'bg-cyan-500 text-black font-bold'
+                    ? 'bg-ocean text-white font-bold'
                     : 'bg-slate-900 text-slate-400 hover:text-white border border-white/10'
                 }`}
               >

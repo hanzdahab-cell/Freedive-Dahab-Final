@@ -217,7 +217,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full py-4 rounded-xl bg-cyan-500 text-black font-bold uppercase tracking-wider text-xs"
+              className="w-full py-4 rounded-xl bg-ocean text-white font-bold uppercase tracking-wider text-xs"
             >
               Reserve Program Now
             </button>

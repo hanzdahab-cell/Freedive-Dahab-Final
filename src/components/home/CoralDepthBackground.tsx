@@ -14,7 +14,7 @@ export function CoralDepthBackground() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none">
       {/* 1. SEAMLESS TOP BLEND FROM HERO DESCENT (Connects 32M into Coral Reef) */}
-      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#01060c] via-[#010814]/90 to-transparent z-10" />
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#0E3453] via-[#0E3453]/90 to-transparent z-10" />
 
       {/* 2. PRIMARY DEEP CORAL REEF LAYER (Top Half: Certificates, Philosophy & Story) */}
       <div 
@@ -30,7 +30,7 @@ export function CoralDepthBackground() {
           loading="lazy"
         />
         {/* Soft color tint to restore Red Sea turquoise / oceanic deep blue */}
-        <div className="absolute inset-0 bg-[#02182c]/40 mix-blend-color" />
+        <div className="absolute inset-0 bg-[#0E3453]/40 mix-blend-color" />
       </div>
 
       {/* 3. SECONDARY DEEP CORAL SEABED & DROP-OFF LAYER (Lower Half: Portals, Testimonials, FAQ) */}
@@ -46,12 +46,12 @@ export function CoralDepthBackground() {
           className="w-full h-full object-cover object-center opacity-50 mix-blend-luminosity filter brightness-105 contrast-125"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-[#021526]/40 mix-blend-color" />
+        <div className="absolute inset-0 bg-[#0E3453]/40 mix-blend-color" />
       </div>
 
       {/* 4. UNIFIED DEEP OCEAN GRADIENTS FOR OPTIMAL TEXT CONTRAST */}
       {/* Smooth, atmospheric dark navy wash preserving coral visibility while maintaining 100% text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#010712]/75 via-[#020b18]/80 to-[#01050d]/88 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0E3453]/75 via-[#0E3453]/80 to-[#0E3453]/88 z-10" />
 
       {/* 5. AMBIENT CAUSTIC LIGHT BEAMS & BIOLUMINESCENT DEPTH ACCENTS */}
       <div className="absolute inset-0 z-10">
@@ -79,7 +79,7 @@ export function CoralDepthBackground() {
       </div>
 
       {/* 7. BOTTOM FOOTER FADE */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#01040f] to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0E3453] to-transparent z-10" />
     </div>
   );
 }

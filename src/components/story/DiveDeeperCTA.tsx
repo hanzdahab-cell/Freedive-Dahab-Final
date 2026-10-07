@@ -84,7 +84,7 @@ export function DiveDeeperCTA() {
   return (
     <section
       id="dive-deeper"
-      className="relative py-32 md:py-48 px-6 md:px-12 overflow-hidden bg-gradient-to-b from-[#0B2A3C] via-[#114B5F] to-[#2EC4B6]/30 text-center"
+      className="relative py-32 md:py-48 px-6 md:px-12 overflow-hidden bg-gradient-to-b from-[#0E3453] via-[#114B5F] to-[#2EC4B6]/30 text-center"
     >
       {/* Surface Light Returning Radiant Glow */}
       <div

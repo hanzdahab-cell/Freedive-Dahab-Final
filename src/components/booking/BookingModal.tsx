@@ -304,7 +304,7 @@ export function BookingModal({ isOpen, onClose, initialSelectedId, currency }: B
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <button
                 type="submit"
-                className="flex-1 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-cyan-500/25"
+                className="flex-1 py-4 rounded-xl bg-ocean hover:bg-ocean-light text-white text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-cyan-500/25"
               >
                 <Send className="w-4 h-4" />
                 <span>{t.booking.submit}</span>

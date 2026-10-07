@@ -44,7 +44,7 @@ export function TimelineSection({ onDepthChange }: TimelineSectionProps) {
     <section
       id="timeline"
       ref={containerRef}
-      className="relative py-28 md:py-36 px-6 md:px-12 bg-gradient-to-b from-[#081F30] via-[#0B2A3C] to-[#071B2B] overflow-hidden"
+      className="relative py-28 md:py-36 px-6 md:px-12 bg-gradient-to-b from-[#0E3453] via-[#0E3453] to-[#0E3453] overflow-hidden"
     >
       {/* Wave Transition Top */}
       <div aria-hidden="true" className="absolute top-0 left-0 right-0 overflow-hidden leading-none pointer-events-none -translate-y-[98%]">
@@ -52,7 +52,7 @@ export function TimelineSection({ onDepthChange }: TimelineSectionProps) {
           viewBox="0 0 1440 60"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-10 md:h-16 text-[#081F30]"
+          className="w-full h-10 md:h-16 text-[#0E3453]"
         >
           <path
             d="M0,20 C360,50 720,0 1080,30 C1260,45 1380,25 1440,20 L1440,60 L0,60 Z"
@@ -141,8 +141,8 @@ export function TimelineSection({ onDepthChange }: TimelineSectionProps) {
                       isSelected
                         ? 'border-cyan-300 bg-[#2EC4B6] scale-125 shadow-[0_0_15px_#2EC4B6]'
                         : isPassed
-                        ? 'border-[#2EC4B6] bg-[#0B2A3C]'
-                        : 'border-white/20 bg-[#061826] group-hover:border-white/50'
+                        ? 'border-[#2EC4B6] bg-[#0E3453]'
+                        : 'border-white/20 bg-[#0E3453] group-hover:border-white/50'
                     }`}
                   >
                     <span

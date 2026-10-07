@@ -64,7 +64,7 @@ export function DepthGauge({ currentDepth, onNavigateToDepth }: DepthGaugeProps)
 
         {/* Moving bead cursor */}
         <div
-          className="absolute w-2.5 h-2.5 rounded-full bg-cyan-300 border-2 border-[#061826] shadow-[0_0_10px_#2EC4B6] -translate-x-1/2 left-1/2 transition-all duration-150 ease-out pointer-events-none"
+          className="absolute w-2.5 h-2.5 rounded-full bg-cyan-300 border-2 border-[#0E3453] shadow-[0_0_10px_#2EC4B6] -translate-x-1/2 left-1/2 transition-all duration-150 ease-out pointer-events-none"
           style={{ top: `calc(${Math.min(100, Math.max(0, currentDepth))}% - 5px)` }}
         />
 

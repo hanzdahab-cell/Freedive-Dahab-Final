@@ -119,7 +119,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
   const eventTypesList = Object.values(EVENT_TYPES_DATA);
 
   return (
-    <section className="relative bg-[#020813] text-slate-100 py-12 sm:py-16 px-4 sm:px-8">
+    <section className="relative bg-[#0E3453] text-slate-100 py-12 sm:py-16 px-4 sm:px-8">
       
       {/* Background Ambience */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-cyan-600/[0.04] blur-[150px] pointer-events-none rounded-full" />
@@ -130,7 +130,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
         {/* ======================================================== */}
         {/* TOP NOTICE BANNER (AS REQUIRED BY USER)                  */}
         {/* ======================================================== */}
-        <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-cyan-950/70 via-[#04152e] to-cyan-950/70 border border-cyan-400/40 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-cyan-950/70 via-[#0E3453] to-cyan-950/70 border border-cyan-400/40 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-start gap-3.5">
             <div className="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center shrink-0 text-cyan-300">
               <Sparkles className="w-5 h-5" />
@@ -147,7 +147,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
 
           <button
             onClick={() => onOpenBooking()}
-            className="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-mono text-xs font-bold uppercase tracking-wider transition-all shrink-0 shadow-lg shadow-cyan-500/25 cursor-pointer text-center"
+            className="px-5 py-2.5 rounded-xl bg-ocean hover:bg-ocean-light text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shrink-0 shadow-lg shadow-cyan-500/25 cursor-pointer text-center"
           >
             Custom Date Inquiry
           </button>
@@ -169,7 +169,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
               <button
                 key={et.id}
                 onClick={() => onNavigate && onNavigate(`event-${et.id}` as PageType)}
-                className="p-3 rounded-xl bg-[#040e1d] hover:bg-[#07162e] border border-white/10 hover:border-cyan-400/40 transition-all text-left flex flex-col justify-between group cursor-pointer"
+                className="p-3 rounded-xl bg-[#0E3453] hover:bg-[#0E3453] border border-white/10 hover:border-cyan-400/40 transition-all text-left flex flex-col justify-between group cursor-pointer"
               >
                 <div>
                   <span className="text-[10px] font-mono text-cyan-400 font-semibold uppercase tracking-wider block">
@@ -191,7 +191,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
         {/* ======================================================== */}
         {/* 2026 MONTH NAVIGATION & CYCLING STRIP                    */}
         {/* ======================================================== */}
-        <div className="p-5 sm:p-6 rounded-3xl bg-[#030d1d] border border-white/10 space-y-6">
+        <div className="p-5 sm:p-6 rounded-3xl bg-[#0E3453] border border-white/10 space-y-6">
           
           {/* Header with Month Selector & View Toggle */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -235,7 +235,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
                   onClick={() => setViewMode('cards')}
                   className={`px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all cursor-pointer ${
                     viewMode === 'cards'
-                      ? 'bg-cyan-500 text-black font-bold'
+                      ? 'bg-ocean text-white font-bold'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
@@ -246,7 +246,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
                   onClick={() => setViewMode('calendar')}
                   className={`px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all cursor-pointer ${
                     viewMode === 'calendar'
-                      ? 'bg-cyan-500 text-black font-bold'
+                      ? 'bg-ocean text-white font-bold'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
@@ -274,7 +274,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
                   }}
                   className={`py-2 px-1 rounded-xl text-center font-mono text-xs transition-all relative cursor-pointer ${
                     isSelected
-                      ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/25'
+                      ? 'bg-ocean text-white font-bold shadow-md shadow-cyan-500/25'
                       : isCurrentSim
                       ? 'bg-cyan-950/40 text-cyan-300 border border-cyan-500/30'
                       : 'bg-white/[0.03] text-slate-400 hover:text-white hover:bg-white/[0.08]'
@@ -310,7 +310,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-3 py-1 rounded-full text-xs font-mono transition-all cursor-pointer flex items-center gap-1.5 ${
                     isActive
-                      ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
+                      ? 'bg-ocean text-white font-bold shadow-md shadow-cyan-500/20'
                       : 'bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10'
                   }`}
                 >
@@ -343,7 +343,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
             </div>
 
             {currentMonthEvents.length === 0 ? (
-              <div className="p-12 rounded-3xl bg-[#030d1d] border border-white/10 text-center space-y-4">
+              <div className="p-12 rounded-3xl bg-[#0E3453] border border-white/10 text-center space-y-4">
                 <CalendarIcon className="w-12 h-12 text-slate-500 mx-auto" />
                 <h4 className="font-serif text-xl font-bold text-white">
                   No scheduled {selectedCategory} events in {currentMonth.name}
@@ -353,7 +353,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
                 </p>
                 <button
                   onClick={() => onOpenBooking()}
-                  className="px-6 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-mono text-xs font-bold uppercase tracking-wider"
+                  className="px-6 py-2.5 rounded-xl bg-ocean hover:bg-ocean-light text-white font-mono text-xs font-bold uppercase tracking-wider"
                 >
                   Request Custom Dates in {currentMonth.name}
                 </button>
@@ -371,10 +371,10 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
                       key={item.id}
                       className={`p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between group relative overflow-hidden ${
                         isCurrent
-                          ? 'bg-[#04152a] border-cyan-400/60 shadow-[0_0_30px_rgba(56,189,248,0.2)] ring-1 ring-cyan-400/30'
+                          ? 'bg-[#0E3453] border-cyan-400/60 shadow-[0_0_30px_rgba(56,189,248,0.2)] ring-1 ring-cyan-400/30'
                           : isPast
-                          ? 'bg-[#030914] border-white/5 opacity-70'
-                          : 'bg-[#030d1d] border-white/10 hover:border-cyan-400/40 hover:bg-[#051329]'
+                          ? 'bg-[#0E3453] border-white/5 opacity-70'
+                          : 'bg-[#0E3453] border-white/10 hover:border-cyan-400/40 hover:bg-[#0E3453]'
                       }`}
                     >
                       {/* Top Row: Date Pill & Status */}
@@ -389,7 +389,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
                           </span>
 
                           {isCurrent && (
-                            <span className="px-2 py-0.5 rounded-full bg-cyan-400 text-black font-mono text-[10px] font-black uppercase tracking-wider flex items-center gap-1">
+                            <span className="px-2 py-0.5 rounded-full bg-ocean-light text-white font-mono text-[10px] font-black uppercase tracking-wider flex items-center gap-1">
                               <span className="w-1.5 h-1.5 rounded-full bg-black animate-ping" />
                               Active Now
                             </span>
@@ -485,7 +485,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
                             className={`flex-1 py-2 px-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all text-center ${
                               isPast
                                 ? 'bg-white/5 text-slate-500 cursor-not-allowed border border-white/5'
-                                : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-md shadow-cyan-500/20 cursor-pointer'
+                                : 'bg-ocean hover:bg-ocean-light text-white shadow-md shadow-cyan-500/20 cursor-pointer'
                             }`}
                           >
                             {isPast ? 'Completed' : 'Book Seat'}
@@ -504,7 +504,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
         {/* VIEW 2: INTERACTIVE MONTHLY CALENDAR GRID VIEW           */}
         {/* ======================================================== */}
         {viewMode === 'calendar' && (
-          <div className="p-6 sm:p-8 rounded-3xl bg-[#030d1d] border border-white/10 space-y-6">
+          <div className="p-6 sm:p-8 rounded-3xl bg-[#0E3453] border border-white/10 space-y-6">
             
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <div>
@@ -553,7 +553,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
                       isSelectedDay
                         ? 'bg-cyan-950/60 border-cyan-400 ring-2 ring-cyan-400/40'
                         : hasEvents
-                        ? 'bg-[#041022] border-white/10'
+                        ? 'bg-[#0E3453] border-white/10'
                         : 'bg-black/20 border-white/5'
                     }`}
                   >
@@ -590,7 +590,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
 
             {/* Selected Day Details Panel */}
             {selectedCalendarDay && (
-              <div className="p-5 rounded-2xl bg-[#04152a] border border-cyan-400/40 space-y-4 animate-in fade-in">
+              <div className="p-5 rounded-2xl bg-[#0E3453] border border-cyan-400/40 space-y-4 animate-in fade-in">
                 <div className="flex items-center justify-between">
                   <div className="font-serif font-bold text-white text-lg">
                     Events Active on {currentMonth.name} {selectedCalendarDay}, 2026
@@ -640,7 +640,7 @@ export function CalendarSection({ onOpenBooking, onNavigate, currency }: Calenda
                             </button>
                             <button
                               onClick={() => onOpenBooking(e.id)}
-                              className="px-3 py-1 rounded-lg bg-cyan-500 text-black text-xs font-mono font-bold uppercase cursor-pointer"
+                              className="px-3 py-1 rounded-lg bg-ocean text-white text-xs font-mono font-bold uppercase cursor-pointer"
                             >
                               Book
                             </button>

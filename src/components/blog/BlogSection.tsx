@@ -7,7 +7,7 @@ export function BlogSection() {
   const [activePost, setActivePost] = useState<BlogPost | null>(null);
 
   return (
-    <section id="blog" className="relative py-28 px-6 bg-[#020a10] border-t border-white/5">
+    <section id="blog" className="relative py-28 px-6 bg-[#0E3453] border-t border-white/5">
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Section Header */}
@@ -43,7 +43,7 @@ export function BlogSection() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020a10] via-transparent to-transparent opacity-90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-transparent to-transparent opacity-90" />
                   <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
                     {post.tags.map((tag) => (
                       <span key={tag} className="px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-black/60 border border-white/20 text-cyan-300">

@@ -3,11 +3,11 @@ import { Cursor } from './components/ui/Cursor';
 import { SSINavigation } from './components/ui/SSINavigation';
 import { PageHeader } from './components/ui/PageHeader';
 import { HeroSurface } from './components/home/HeroSurface';
+import { CinematicIntro } from './components/home/CinematicIntro';
 import { CoralDepthBackground } from './components/home/CoralDepthBackground';
 import { SSICertificates } from './components/ssi/SSICertificates';
 import { StoryTeaserBanner } from './components/home/StoryTeaserBanner';
 import { DahabBlueHoleSection } from './components/home/DahabBlueHoleSection';
-import { HomePortalCards } from './components/home/HomePortalCards';
 import { CoursesSection } from './components/courses/CoursesSection';
 import { TrainingSection } from './components/training/TrainingSection';
 import { CalendarSection } from './components/calendar/CalendarSection';
@@ -52,13 +52,22 @@ export default function App() {
   // Initialize smooth inertia scrolling
   useSmoothScroll();
 
+  // Lenis owns scrollTop — page changes must reset through it or it overwrites the jump
+  const scrollToSurface = () => {
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo({ top: 0 });
+    }
+  };
+
   // Listen to browser forward/backward buttons and external hash changes
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '').toLowerCase();
       if (validPages.includes(hash) || hash.startsWith('event-') || hash.startsWith('course-')) {
         setCurrentPage(hash as PageType);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollToSurface();
       }
     };
 
@@ -69,7 +78,7 @@ export default function App() {
   const navigateTo = (page: PageType) => {
     setCurrentPage(page);
     window.location.hash = `#${page}`;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToSurface();
   };
 
   const handleOpenBooking = (offeringId?: string) => {
@@ -89,7 +98,7 @@ export default function App() {
   return (
     <I18nextProvider i18n={i18n}>
       <LanguageProvider>
-        <div className="relative min-h-screen bg-[#020617] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+        <div className="relative min-h-screen bg-[#0E3453] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
         
         {/* Precision Luxury Pointer Cursor */}
         <Cursor />
@@ -110,8 +119,11 @@ export default function App() {
         {/* 1. INDIVIDUAL PAGE: HOME SANCTUARY                        */}
         {/* ========================================================= */}
         {currentPage === 'home' && (
-          <div className="animate-in fade-in duration-300">
-            {/* 1. HERO: milestones + living water + cinematic descent */}
+          <div className="page-dive-in">
+            {/* 0. CINEMATIC INTRO — navy loading screen, dive-in on click */}
+            <CinematicIntro />
+
+            {/* 1. HERO: underwater vortex film + milestones + cinematic descent */}
             <HeroSurface
               onDescend={handleDescend}
               onOpenBooking={() => handleOpenBooking()}
@@ -135,11 +147,6 @@ export default function App() {
                   onNavigate={navigateTo}
                 />
 
-                {/* Discover Each Dimension: Portal Grid leading to individual pages */}
-                <HomePortalCards
-                  onNavigate={navigateTo}
-                />
-
                 {/* Diver Voices & Testimonials */}
                 <TestimonialsSection />
 
@@ -160,7 +167,7 @@ export default function App() {
         {/* 2. INDIVIDUAL PAGE: SSI COURSES                           */}
         {/* ========================================================= */}
         {currentPage === 'courses' && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <PageHeader
               title="SSI Freediving Courses"
               subtitle="Structured international curriculum from introductory diaphragmatic mechanics and pool technique to elite 40m+ Mouthfill and professional SSI Instructor examination."
@@ -185,7 +192,7 @@ export default function App() {
         {/* 3. INDIVIDUAL PAGE: FREEDIVING TRAINING                   */}
         {/* ========================================================= */}
         {currentPage === 'training' && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <PageHeader
               title="Freediving Training & Coaching"
               subtitle="Dedicated counter-ballast depth buoys at the Blue Hole, precision equalization clinics, pool tables, and 1-on-1 master underwater 4K video analysis."
@@ -212,7 +219,7 @@ export default function App() {
         {/* 4. INDIVIDUAL PAGE: ACCOMMODATION                         */}
         {/* ========================================================= */}
         {currentPage === 'accommodation' && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <PageHeader
               title="Sanctuary Accommodation & Living"
               subtitle="Step from your room directly into the turquoise training bay. Enjoy oceanfront suites, desert garden eco-villas, gear drying rooms, and high-speed fiber internet."
@@ -234,7 +241,7 @@ export default function App() {
         {/* 5. INDIVIDUAL PAGE: EXPERIENCES PACKAGES                  */}
         {/* ========================================================= */}
         {currentPage === 'packages' && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <PageHeader
               title="Expeditions & Experiences Packages"
               subtitle="All-inclusive freediving residencies combining certified SSI courses, coached Blue Hole line training, oceanfront accommodation, and Red Sea desert safaris."
@@ -261,7 +268,7 @@ export default function App() {
         {/* 6. INDIVIDUAL PAGE: CALENDAR SCHEDULE                     */}
         {/* ========================================================= */}
         {currentPage === 'calendar' && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <PageHeader
               title="Expedition & Course Calendar"
               subtitle="Live schedule of upcoming certified SSI courses, depth camps, equalization clinics, and camel safaris in Dahab. Check remaining spots and book directly."
@@ -286,7 +293,7 @@ export default function App() {
         {/* 7. INDIVIDUAL PAGE: EXPERIENCE & SAFARIS                  */}
         {/* ========================================================= */}
         {currentPage === 'experience' && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <PageHeader
               title="Red Sea Expeditions & Safaris"
               subtitle="Immerse yourself in world-class boat expeditions to Ras Mohamed National Park, the legendary Dahab Blue Hole arch, bioluminescent night dives, and Bedouin desert camps."
@@ -313,7 +320,7 @@ export default function App() {
         {/* 8. INDIVIDUAL PAGE: BLOG & JOURNAL                        */}
         {/* ========================================================= */}
         {currentPage === 'blog' && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <PageHeader
               title="Freediving Journal & Archive"
               subtitle="Physiological science, deep equalization mechanics, equipment breakdowns, and dispatches from the Red Sea depths."
@@ -332,7 +339,7 @@ export default function App() {
         {/* 9. INDIVIDUAL PAGE: FAQ & LOGISTICS                       */}
         {/* ========================================================= */}
         {currentPage === 'faq' && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <PageHeader
               title="Frequently Answered Questions"
               subtitle="Everything you need to know about traveling to Dahab, medical clearance, beginner prerequisites, and safety standards."
@@ -351,7 +358,7 @@ export default function App() {
         {/* 10. INDIVIDUAL PAGES: DEDICATED SCHEDULED EVENT DETAIL    */}
         {/* ========================================================= */}
         {currentPage.startsWith('event-') && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <EventDetailPage
               eventTypeId={currentPage.replace('event-', '') as EventTypeId}
               onNavigate={navigateTo}
@@ -365,7 +372,7 @@ export default function App() {
         {/* 11. INDIVIDUAL PAGES: DEDICATED COURSE DETAIL             */}
         {/* ========================================================= */}
         {currentPage.startsWith('course-') && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <CourseDetailPage
               courseSlug={currentPage.replace('course-', '')}
               onNavigate={navigateTo}
@@ -379,7 +386,7 @@ export default function App() {
         {/* 12. INDIVIDUAL PAGE: OUR STORY – FREEDIVE DAHAB           */}
         {/* ========================================================= */}
         {currentPage === 'story' && (
-          <div className="animate-in fade-in duration-300">
+          <div className="page-dive-in">
             <OurStoryPage
               onNavigate={navigateTo}
               onOpenBooking={handleOpenBooking}

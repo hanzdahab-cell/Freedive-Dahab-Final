@@ -3,6 +3,7 @@ import { X, ChevronLeft, ChevronRight, Sparkles, BookOpen, Compass, Waves, Messa
 import { PageType } from '../../types';
 import lottaImage from '../../assets/images/founders/Lotta - freedive dahab.jpg';
 import { LuxuryStory } from '../home/LuxuryStory';
+import { DescentStats } from '../home/DescentStats';
 
 // ============================================================================
 // CONFIGURATION & MEDIA MANIFEST (EDIT CONTENT, PATHS, QUOTES & CAPTIONS HERE)
@@ -286,7 +287,7 @@ export function OurStoryPage({ onNavigate, onOpenBooking }: OurStoryPageProps) {
     .filter((_, idx) => !missingGalleryIndices[idx]);
 
   return (
-    <div className="relative min-h-screen bg-[#020617] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="relative min-h-screen bg-[#0E3453] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
       
       {/* ==================================================================== */}
       {/* 1) HERO SECTION: Full-width hero image with overlay & title          */}
@@ -304,7 +305,7 @@ export function OurStoryPage({ onNavigate, onOpenBooking }: OurStoryPageProps) {
           />
 
           {/* Light/Dark Overlay for text readability (preserving oceanic depth) */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#020811]/90 via-[#020b14]/75 to-[#020617] backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E3453]/90 via-[#0E3453]/75 to-[#0E3453] backdrop-blur-[1px]" />
           <div className="absolute inset-0 architectural-grid opacity-20 pointer-events-none" />
         </div>
 
@@ -336,7 +337,7 @@ export function OurStoryPage({ onNavigate, onOpenBooking }: OurStoryPageProps) {
       {/* ==================================================================== */}
       {/* 2) INTRO SECTION: Verbatim narrative text from the brief              */}
       {/* ==================================================================== */}
-      <section className="relative py-20 sm:py-28 px-6 bg-[#020617] border-b border-white/5">
+      <section className="relative py-20 sm:py-28 px-6 bg-[#0E3453] border-b border-white/5">
         <div className="absolute inset-0 architectural-grid-fine opacity-10 pointer-events-none" />
 
         <div className="max-w-4xl mx-auto relative z-10 space-y-8 text-left">
@@ -383,10 +384,13 @@ export function OurStoryPage({ onNavigate, onOpenBooking }: OurStoryPageProps) {
       {/* 2.5) PHILOSOPHY & 24-YEAR STATISTICS (moved from the home page) */}
       <LuxuryStory onOpenBooking={onOpenBooking} />
 
+      {/* 2.6) OUR LEGACY IN NUMBERS — Contra-style count-up statement numbers */}
+      <DescentStats />
+
       {/* ==================================================================== */}
       {/* 3) MEET OUR FOUNDERS: 3 Cards with Portrait, Name, Title & Bio      */}
       {/* ==================================================================== */}
-      <section className="relative py-24 sm:py-32 px-6 bg-[#01060f] border-b border-white/5">
+      <section className="relative py-24 sm:py-32 px-6 bg-[#0E3453] border-b border-white/5">
         <div className="absolute inset-0 architectural-grid opacity-15 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -422,7 +426,7 @@ export function OurStoryPage({ onNavigate, onOpenBooking }: OurStoryPageProps) {
       {/* ==================================================================== */}
       {/* 5) CALL TO ACTION: "Dive Deeper" with 3 buttons                     */}
       {/* ==================================================================== */}
-      <section className="relative py-28 sm:py-36 px-6 bg-gradient-to-b from-[#020617] via-[#020b14] to-[#01040f] overflow-hidden select-none">
+      <section className="relative py-28 sm:py-36 px-6 bg-gradient-to-b from-[#0E3453] via-[#0E3453] to-[#0E3453] overflow-hidden select-none">
         
         {/* Ambient glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-500/[0.08] blur-[160px] pointer-events-none rounded-full" />
@@ -449,7 +453,7 @@ export function OurStoryPage({ onNavigate, onOpenBooking }: OurStoryPageProps) {
             {/* Button 1: Courses & Packages */}
             <button
               onClick={() => onNavigate('courses')}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-[#020b14] font-semibold text-xs sm:text-sm font-alata tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] cursor-pointer flex items-center justify-center gap-2 hover:scale-105 duration-200"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-[#0E3453] font-semibold text-xs sm:text-sm font-alata tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] cursor-pointer flex items-center justify-center gap-2 hover:scale-105 duration-200"
             >
               <Compass className="w-4 h-4" />
               <span>Courses &amp; Packages</span>
@@ -467,7 +471,7 @@ export function OurStoryPage({ onNavigate, onOpenBooking }: OurStoryPageProps) {
             {/* Button 3: Contact Us */}
             <button
               onClick={() => onOpenBooking()}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white text-[#020811] hover:bg-slate-100 font-alata text-xs sm:text-sm font-semibold uppercase tracking-[0.08em] transition-all cursor-pointer flex items-center justify-center gap-2 hover:shadow-lg hover:scale-105 duration-200"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white text-[#0E3453] hover:bg-slate-100 font-alata text-xs sm:text-sm font-semibold uppercase tracking-[0.08em] transition-all cursor-pointer flex items-center justify-center gap-2 hover:shadow-lg hover:scale-105 duration-200"
             >
               <MessageSquare className="w-4 h-4 text-slate-800" />
               <span>Contact Us</span>
@@ -610,7 +614,7 @@ function FounderModal({ founder, onClose }: FounderModalProps) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#030d18] border border-white/15 p-6 sm:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.9)] space-y-6"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#0E3453] border border-white/15 p-6 sm:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.9)] space-y-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}

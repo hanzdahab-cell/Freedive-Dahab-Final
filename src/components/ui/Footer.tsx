@@ -23,7 +23,7 @@ export function Footer({ onOpenBooking, onNavigate }: FooterProps) {
   };
 
   return (
-    <footer className="relative bg-[#01040f] text-slate-400 border-t border-white/10 pt-24 pb-16 px-6 overflow-hidden">
+    <footer className="relative bg-[#0E3453] text-slate-400 border-t border-white/10 pt-24 pb-16 px-6 overflow-hidden">
       
       {/* Background Grid */}
       <div className="absolute inset-0 architectural-grid opacity-10 pointer-events-none" />

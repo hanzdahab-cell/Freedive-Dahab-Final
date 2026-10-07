@@ -157,7 +157,7 @@ export function Navbar({ scrollProgress, activeSection, onNavigate }: NavbarProp
             animate={{ opacity: 1, backdropFilter: 'blur(20px)' }}
             exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#061826]/95 flex flex-col justify-center px-8 md:hidden"
+            className="fixed inset-0 z-40 bg-[#0E3453]/95 flex flex-col justify-center px-8 md:hidden"
           >
             <div className="space-y-6">
               <span className="text-xs uppercase tracking-[0.25em] text-[#2EC4B6] font-mono">

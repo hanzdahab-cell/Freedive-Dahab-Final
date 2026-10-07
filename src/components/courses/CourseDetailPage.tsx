@@ -53,7 +53,7 @@ export function CourseDetailPage({
   // ============================== NOT FOUND ==============================
   if (!course) {
     return (
-      <div className="min-h-[80vh] flex items-center justify-center px-6 pt-32 pb-20 bg-[#020617]">
+      <div className="min-h-[80vh] flex items-center justify-center px-6 pt-32 pb-20 bg-[#0E3453]">
         <div className="text-center space-y-6 max-w-md animate-in fade-in zoom-in-95 duration-300">
           <Waves className="w-14 h-14 text-cyan-400/60 mx-auto" />
           <h1 className="font-serif text-4xl font-bold text-white">Course not found</h1>
@@ -63,7 +63,7 @@ export function CourseDetailPage({
           </p>
           <button
             onClick={() => onNavigate('courses')}
-            className="px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-bold uppercase tracking-wider transition-all inline-flex items-center gap-2 cursor-pointer"
+            className="px-8 py-3.5 rounded-xl bg-ocean hover:bg-ocean-light text-white text-xs font-bold uppercase tracking-wider transition-all inline-flex items-center gap-2 cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>All Courses</span>
@@ -121,12 +121,12 @@ export function CourseDetailPage({
       : 'Specialty';
 
   const handleNavigateToCourse = (slug: string) => {
+    // App's navigateTo resets scroll to the surface through Lenis
     onNavigate(`course-${slug}` as PageType);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="relative bg-[#020617] text-slate-100 min-h-screen">
+    <div className="relative bg-[#0E3453] text-slate-100 min-h-screen">
       {/* ========================================================== */}
       {/* HERO                                                        */}
       {/* ========================================================== */}
@@ -136,8 +136,8 @@ export function CourseDetailPage({
           alt={course.image.alt}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-[#020617]/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-[#0E3453]/40 to-[#0E3453]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0E3453]/70 via-transparent to-transparent" />
 
         {/* Top actions */}
         <div className="absolute top-24 sm:top-28 left-6 right-6 max-w-7xl mx-auto flex items-center justify-between">
@@ -249,6 +249,34 @@ export function CourseDetailPage({
               </div>
             </div>
 
+            {/* Day-by-day schedule (core courses with a full plan in the data) */}
+            {isCore && (course as Course).schedule && (
+              <div className="space-y-5 animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both" style={{ animationDelay: '160ms' }}>
+                <h2 className="font-bebas text-3xl sm:text-4xl text-white tracking-[0.05em] flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-cyan-400" />
+                  Day by day
+                </h2>
+                <div className="space-y-3">
+                  {(course as Course).schedule!.map((day, i) => (
+                    <div
+                      key={i}
+                      className="p-5 sm:p-6 rounded-xl bg-slate-900/50 border border-white/10 hover:border-cyan-400/40 transition-all duration-300"
+                    >
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="px-2.5 py-1 rounded-md bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-[10px] font-mono uppercase tracking-[0.2em]">
+                          {day.day}
+                        </span>
+                        <span className="text-sm font-semibold text-white">{day.title}</span>
+                      </div>
+                      <p className="mt-2.5 text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+                        {day.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Motion infographic — adapted from the hand-drawn diving template */}
             {isCore && (course as Course).disciplines && (course as Course).futurePerformances && (
               <div className="animate-in fade-in duration-700">
@@ -306,7 +334,7 @@ export function CourseDetailPage({
 
                 <button
                   onClick={() => onOpenBooking(course.id)}
-                  className="w-full py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-bold uppercase tracking-[0.15em] transition-all shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/40 flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-4 rounded-xl bg-ocean hover:bg-ocean-light text-white text-xs font-bold uppercase tracking-[0.15em] transition-all shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/40 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>{isInstructor ? 'Apply Now' : 'Reserve Your Spot'}</span>
                   <ChevronRight className="w-4 h-4" />
@@ -373,7 +401,7 @@ export function CourseDetailPage({
                       alt={rel.image.alt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-transparent to-transparent" />
                   </div>
                   <div className="p-5 space-y-2">
                     <h3 className="font-serif text-lg font-bold text-white group-hover:text-cyan-200 transition-colors">

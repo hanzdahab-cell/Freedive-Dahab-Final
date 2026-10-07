@@ -14,7 +14,7 @@ export function ActivitiesSection({ onOpenBooking, currency }: ActivitiesSection
   };
 
   return (
-    <section id="safaris" className="relative py-32 px-6 bg-[#020617] border-t border-white/5">
+    <section id="safaris" className="relative py-32 px-6 bg-[#0E3453] border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -47,7 +47,7 @@ export function ActivitiesSection({ onOpenBooking, currency }: ActivitiesSection
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-transparent to-transparent" />
                   
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono text-cyan-300 flex items-center gap-1.5">
@@ -90,7 +90,7 @@ export function ActivitiesSection({ onOpenBooking, currency }: ActivitiesSection
               <div className="p-6 sm:p-8 pt-0">
                 <button
                   onClick={() => onOpenBooking(act.id)}
-                  className="w-full py-3 rounded-xl bg-sky-950/60 hover:bg-cyan-500 hover:text-black border border-cyan-400/40 text-cyan-300 text-xs uppercase font-mono font-bold tracking-wider transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3 rounded-xl bg-sky-950/60 hover:bg-ocean hover:text-white border border-cyan-400/40 text-cyan-300 text-xs uppercase font-mono font-bold tracking-wider transition-all flex items-center justify-center gap-2"
                 >
                   <span>Book Expedition</span>
                   <ArrowRight className="w-4 h-4" />

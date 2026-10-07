@@ -84,7 +84,7 @@ export function DepthShowcase({ onOpenBooking }: DepthShowcaseProps) {
   const activeLayer = DEPTH_LAYERS.find(l => l.meters === selectedMeters) || DEPTH_LAYERS[2];
 
   return (
-    <section id="depth" className="relative py-32 px-6 bg-[#020617] border-t border-white/5">
+    <section id="depth" className="relative py-32 px-6 bg-[#0E3453] border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}

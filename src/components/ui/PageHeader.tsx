@@ -32,7 +32,7 @@ export function PageHeader({
   const displayCta = (typeof localizedConfig === 'object' && localizedConfig?.ctaText) || ctaText;
 
   return (
-    <div className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 px-6 bg-gradient-to-b from-[#020b14] via-[#031320] to-[#020617] border-b border-white/10 overflow-hidden select-none">
+    <div className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 px-6 bg-gradient-to-b from-[#0E3453] via-[#0E3453] to-[#0E3453] border-b border-white/10 overflow-hidden select-none">
       
       {/* Ambient Lighting */}
       <div className="absolute top-0 right-1/4 w-[600px] h-[350px] bg-cyan-500/[0.08] blur-[150px] pointer-events-none rounded-full" />
@@ -74,7 +74,7 @@ export function PageHeader({
             <div className="flex items-center gap-3">
               <button
                 onClick={onOpenBooking}
-                className="px-7 py-3 rounded-full bg-cyan-400 hover:bg-cyan-300 text-[#020b14] font-semibold text-xs sm:text-sm font-alata tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] cursor-pointer"
+                className="px-7 py-3 rounded-full bg-cyan-400 hover:bg-cyan-300 text-[#0E3453] font-semibold text-xs sm:text-sm font-alata tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] cursor-pointer"
               >
                 {displayCta}
               </button>

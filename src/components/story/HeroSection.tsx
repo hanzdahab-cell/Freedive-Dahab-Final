@@ -61,12 +61,12 @@ export function HeroSection({ onScrollToNext }: HeroSectionProps) {
           />
         ) : (
           /* Graceful organic sea gradient fallback if neither file is loaded */
-          <div className="w-full h-full bg-gradient-to-b from-[#114B5F] via-[#0B2A3C] to-[#061826]" />
+          <div className="w-full h-full bg-gradient-to-b from-[#114B5F] via-[#0E3453] to-[#0E3453]" />
         )}
 
         {/* Soft sunlit turquoise and deep ocean vignette overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2EC4B6]/20 via-[#0B2A3C]/75 to-[#061826] mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#061826] via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2EC4B6]/20 via-[#0E3453]/75 to-[#0E3453] mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-transparent to-black/30" />
       </motion.div>
 
       {/* Animated Water-light Caustics Overlay */}

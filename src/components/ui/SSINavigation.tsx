@@ -262,49 +262,63 @@ export function SSINavigation({
     }, 450);
   };
 
+  // Lenis owns scrollTop — always reset through it, or its rAF overwrites the jump
+  const scrollToTopInstant = () => {
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo({ top: 0 });
+    }
+  };
+
   const handleNavigate = (page: PageType) => {
     setOpenDropdown(null);
     setIsMobileMenuOpen(false);
     onNavigate(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToTopInstant();
   };
 
-  // Click handler that supports both in-page smooth scrolling to section and multi-page routing
+  // Click handler: every header item opens its own dedicated page.
+  // When you are ALREADY on that page, glide to the section instead.
   const handleNavItemClick = (section: NavSectionConfig) => {
     setOpenDropdown(null);
     setIsMobileMenuOpen(false);
 
     // If target is home and we are already on home, smooth scroll to top
     if (section.pageTarget === 'home' && currentPage === 'home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
       setActiveNavId('home');
       return;
     }
 
-    // Check if target section element exists on current page for smooth scrolling
+    // Already on the target page → glide to the section on THIS page
     const targetEl = document.getElementById(section.id);
-    if (
-      targetEl &&
-      (currentPage === section.pageTarget ||
-        (currentPage === 'home' && ['home', 'story', 'courses', 'faq'].includes(section.id)))
-    ) {
+    if (targetEl && currentPage === section.pageTarget) {
       const headerOffset = 90;
       const targetY = targetEl.getBoundingClientRect().top + window.scrollY - headerOffset;
-      window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+      if (window.__lenis) {
+        window.__lenis.scrollTo(targetY, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+      }
       setActiveNavId(section.id);
       return;
     }
 
-    // Otherwise navigate to the dedicated page
+    // Otherwise navigate to the dedicated page (always lands at the surface/top)
     onNavigate(section.pageTarget);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToTopInstant();
   };
 
   const handleNavigateToEvent = (eventTypeId: EventTypeId) => {
     setOpenDropdown(null);
     setIsMobileMenuOpen(false);
     onNavigate(`event-${eventTypeId}` as PageType);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToTopInstant();
   };
 
   const navSections: NavSectionConfig[] = [
@@ -586,8 +600,8 @@ export function SSINavigation({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#020811]/95 backdrop-blur-xl border-b border-white/[0.08] py-2 sm:py-2.5 shadow-2xl'
-          : 'bg-gradient-to-b from-[#020610]/95 via-[#020610]/60 to-transparent py-2.5 sm:py-3.5'
+          ? 'bg-[#0E3453]/95 backdrop-blur-xl border-b border-white/[0.08] py-2 sm:py-2.5 shadow-2xl'
+          : 'bg-gradient-to-b from-[#0E3453]/95 via-[#0E3453]/60 to-transparent py-2.5 sm:py-3.5'
       }`}
     >
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
@@ -653,7 +667,7 @@ export function SSINavigation({
                       onMouseEnter={() => handleMouseEnter(section.id)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      <div className="w-80 rounded-xl bg-[#030d18]/98 backdrop-blur-2xl border border-white/10 p-2 shadow-[0_20px_60px_rgba(0,0,0,0.8)] ring-1 ring-white/5">
+                      <div className="w-80 rounded-xl bg-[#0E3453]/98 backdrop-blur-2xl border border-white/10 p-2 shadow-[0_20px_60px_rgba(0,0,0,0.8)] ring-1 ring-white/5">
                         
                         {/* Dropdown Header */}
                         <div className="px-3 py-2 border-b border-white/5 flex items-center justify-between mb-1">
@@ -756,7 +770,7 @@ export function SSINavigation({
             </button>
 
             {isLangMenuOpen && (
-              <div className="absolute top-full right-0 mt-2 w-56 rounded-xl bg-[#030d18]/98 backdrop-blur-2xl border border-white/10 p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.85)] ring-1 ring-white/5 z-50 animate-in fade-in zoom-in-95 duration-150 font-alata">
+              <div className="absolute top-full right-0 mt-2 w-56 rounded-xl bg-[#0E3453]/98 backdrop-blur-2xl border border-white/10 p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.85)] ring-1 ring-white/5 z-50 animate-in fade-in zoom-in-95 duration-150 font-alata">
                 <div className="px-2.5 py-1 text-[10px] font-mono tracking-widest text-slate-400 uppercase border-b border-white/5 mb-1 flex items-center justify-between">
                   <span className="flex items-center gap-1.5">
                     <Globe className="w-3 h-3 text-cyan-400" />
@@ -827,7 +841,7 @@ export function SSINavigation({
           {/* Start Journey / Book CTA Button */}
           <button
             onClick={() => onOpenBooking()}
-            className="px-3.5 py-1.5 sm:px-5 sm:py-2 rounded-full bg-white text-[#020811] hover:bg-slate-100 font-alata text-xs font-semibold uppercase tracking-[0.08em] transition-all duration-200 flex items-center gap-1.5 cursor-pointer hover:shadow-lg hover:scale-105"
+            className="px-3.5 py-1.5 sm:px-5 sm:py-2 rounded-full bg-white text-[#0E3453] hover:bg-slate-100 font-alata text-xs font-semibold uppercase tracking-[0.08em] transition-all duration-200 flex items-center gap-1.5 cursor-pointer hover:shadow-lg hover:scale-105"
           >
             <span>{t('ui.bookCta')}</span>
             <ArrowRight className="w-3 h-3" />
@@ -857,7 +871,7 @@ export function SSINavigation({
           onMouseEnter={() => handleMouseEnter('courses')}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="border-b border-white/10 bg-[#030d18]/97 backdrop-blur-2xl shadow-[0_30px_80px_rgba(0,0,0,0.85)]">
+          <div className="border-b border-white/10 bg-[#0E3453]/97 backdrop-blur-2xl shadow-[0_30px_80px_rgba(0,0,0,0.85)]">
             <div className="max-w-7xl mx-auto px-8 py-5">
 
               {/* Panel header */}
@@ -903,7 +917,7 @@ export function SSINavigation({
                                 className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500"
                               />
                             )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#030d18]/60 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453]/60 via-transparent to-transparent" />
                             {item.badge && (
                               <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[8px] font-mono bg-cyan-500/25 text-cyan-100 border border-cyan-400/40 backdrop-blur-sm">
                                 {item.badge}
@@ -934,7 +948,7 @@ export function SSINavigation({
       {/* MOBILE DRAWER: Scrollable with Accordion Pop-ups         */}
       {/* ======================================================== */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#030913]/98 backdrop-blur-2xl border-b border-white/10 px-5 py-6 space-y-3 text-sm font-sans animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto">
+        <div className="lg:hidden bg-[#0E3453]/98 backdrop-blur-2xl border-b border-white/10 px-5 py-6 space-y-3 text-sm font-sans animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto">
           
           {/* Language Switcher on Mobile with Circular Flag Signs */}
           <div className="flex flex-col pb-3 border-b border-white/10 space-y-2.5">
@@ -1045,7 +1059,7 @@ export function SSINavigation({
                 setIsMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full py-3 rounded-xl bg-white text-[#020811] font-semibold text-center flex items-center justify-center gap-2 cursor-pointer hover:bg-slate-100"
+              className="w-full py-3 rounded-xl bg-white text-[#0E3453] font-semibold text-center flex items-center justify-center gap-2 cursor-pointer hover:bg-slate-100"
             >
               <Sparkles className="w-4 h-4" />
               <span>{t('ui.bookNow')}</span>

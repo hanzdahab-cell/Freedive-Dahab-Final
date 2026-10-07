@@ -108,7 +108,7 @@ export function HomePortalCards({ onNavigate }: HomePortalCardsProps) {
               <div
                 key={card.page}
                 onClick={() => onNavigate(card.page)}
-                className={`group relative rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-400/50 bg-[#030d1a] cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex flex-col justify-between ${
+                className={`group relative rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-400/50 bg-[#0E3453] cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex flex-col justify-between ${
                   isWide ? 'md:col-span-2 lg:col-span-2' : ''
                 }`}
               >
@@ -119,7 +119,7 @@ export function HomePortalCards({ onNavigate }: HomePortalCardsProps) {
                     alt={card.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-30 group-hover:opacity-40"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020813] via-[#020813]/85 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E3453] via-[#0E3453]/85 to-transparent" />
                 </div>
 
                 {/* Top Badge */}

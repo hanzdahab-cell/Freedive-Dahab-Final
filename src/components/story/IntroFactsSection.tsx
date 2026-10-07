@@ -16,7 +16,7 @@ export function IntroFactsSection() {
   return (
     <section
       id="story"
-      className="relative py-28 md:py-36 px-6 md:px-12 bg-gradient-to-b from-[#061826] via-[#0B2A3C] to-[#081F30] overflow-hidden"
+      className="relative py-28 md:py-36 px-6 md:px-12 bg-gradient-to-b from-[#0E3453] via-[#0E3453] to-[#0E3453] overflow-hidden"
     >
       {/* Top Wave Divider */}
       <div aria-hidden="true" className="absolute top-0 left-0 right-0 overflow-hidden leading-none pointer-events-none -translate-y-[99%]">
@@ -24,7 +24,7 @@ export function IntroFactsSection() {
           viewBox="0 0 1440 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-12 md:h-20 text-[#061826] preserve-3d"
+          className="w-full h-12 md:h-20 text-[#0E3453] preserve-3d"
         >
           <path
             d="M0,32 C320,70 480,10 720,40 C960,70 1120,20 1440,32 L1440,80 L0,80 Z"

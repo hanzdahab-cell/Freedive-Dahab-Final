@@ -94,7 +94,7 @@ export function GallerySection() {
   return (
     <section
       id="gallery"
-      className="relative py-28 md:py-36 px-6 md:px-12 bg-gradient-to-b from-[#061826] via-[#05131E] to-[#0B2A3C] overflow-hidden"
+      className="relative py-28 md:py-36 px-6 md:px-12 bg-gradient-to-b from-[#0E3453] via-[#0E3453] to-[#0E3453] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
