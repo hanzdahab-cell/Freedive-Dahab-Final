@@ -1,0 +1,9 @@
+# Frouge Freedive Dahab - Search Engine Crawler Access
+# https://freedive-dahab-final.vercel.app
+
+User-agent: *
+Allow: /
+
+Sitemap: https://freedive-dahab-final.vercel.app/sitemap.xml
+
+Host: https://freedive-dahab-final.vercel.app
