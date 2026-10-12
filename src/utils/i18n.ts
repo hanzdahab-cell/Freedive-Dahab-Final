@@ -363,6 +363,27 @@ export interface TranslationDictionary {
     days: string;
     meters: string;
   };
+  courseFinder: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    question: string;
+    choices: {
+      try: { title: string; description: string };
+      beginner: { title: string; description: string };
+      levelOne: { title: string; description: string };
+      levelTwo: { title: string; description: string };
+    };
+    resultEyebrow: string;
+    duration: string;
+    depth: string;
+    price: string;
+    prerequisiteNote: string;
+    viewCourse: string;
+    bookCourse: string;
+    emptyTitle: string;
+    emptyDescription: string;
+  };
   trainingSection: {
     badge: string;
     title: string;
@@ -719,6 +740,27 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       submit: 'Send Reservation Request',
       whatsappDirect: 'Chat Instantly on WhatsApp',
       close: 'Close',
+    },
+    courseFinder: {
+      eyebrow: 'Course finder',
+      title: 'Find the course that fits your next dive',
+      subtitle: 'Tell us where you are in your freediving journey and we will suggest a clear next step.',
+      question: 'Which best describes your experience?',
+      choices: {
+        try: { title: 'I want to try freediving', description: 'A relaxed one-day introduction, with no certification commitment.' },
+        beginner: { title: "I'm new and ready to learn", description: 'Start with the SSI Freediver certification course.' },
+        levelOne: { title: 'I have SSI Freediver or equivalent', description: 'Build depth and technique on your next level.' },
+        levelTwo: { title: 'I have SSI Advanced or equivalent', description: 'Progress toward performance-depth skills.' },
+      },
+      resultEyebrow: 'Recommended for you',
+      duration: 'Duration',
+      depth: 'Max depth',
+      price: 'Price',
+      prerequisiteNote: 'Your instructor will confirm prerequisites before booking.',
+      viewCourse: 'View course details',
+      bookCourse: 'Book this course',
+      emptyTitle: 'Your next descent starts with one choice',
+      emptyDescription: "Choose the option that feels closest to where you are now. We'll match it with an SSI course.",
     },
     coursesSection: {
       badge: 'OFFICIAL SSI ACADEMY • SOUTH SINAI',
@@ -1091,6 +1133,27 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       whatsappDirect: 'محادثة فورية عبر واتساب',
       close: 'إغلاق',
     },
+    courseFinder: {
+      eyebrow: 'مساعد اختيار الدورة',
+      title: 'اختر الدورة المناسبة لخطوتك التالية',
+      subtitle: 'أخبرنا عن خبرتك في الغوص الحر لنقترح عليك دورة SSI مناسبة.',
+      question: 'أي وصف يناسب خبرتك؟',
+      choices: {
+        try: { title: 'أريد تجربة الغوص الحر', description: 'مقدمة هادئة ليوم واحد دون التزام بالحصول على شهادة.' },
+        beginner: { title: 'أنا مبتدئ ومستعد للتعلم', description: 'ابدأ بدورة SSI Freediver للحصول على الشهادة.' },
+        levelOne: { title: 'لدي SSI Freediver أو ما يعادلها', description: 'طوّر مهاراتك وعمقك في المستوى التالي.' },
+        levelTwo: { title: 'لدي SSI Advanced أو ما يعادلها', description: 'تقدم نحو مهارات الأداء والأعماق.' },
+      },
+      resultEyebrow: 'الدورة المقترحة لك',
+      duration: 'المدة',
+      depth: 'أقصى عمق',
+      price: 'السعر',
+      prerequisiteNote: 'سيؤكد مدربك المتطلبات قبل الحجز.',
+      viewCourse: 'عرض تفاصيل الدورة',
+      bookCourse: 'احجز هذه الدورة',
+      emptyTitle: 'تبدأ خطوتك التالية باختيار واحد',
+      emptyDescription: 'اختر الوصف الأقرب إلى خبرتك الحالية، وسنقترح دورة SSI مناسبة.',
+    },
     coursesSection: {
       badge: 'أكاديمية SSI الرسمية • جنوب سيناء',
       title: 'الدقة',
@@ -1462,6 +1525,27 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       whatsappDirect: 'Chatear Inmediatamente por WhatsApp',
       close: 'Cerrar',
     },
+    courseFinder: {
+      eyebrow: 'Buscador de cursos',
+      title: 'Encuentra el curso para tu próxima inmersión',
+      subtitle: 'Cuéntanos en qué punto estás y te recomendaremos un siguiente paso claro.',
+      question: '¿Qué opción describe mejor tu experiencia?',
+      choices: {
+        try: { title: 'Quiero probar la apnea', description: 'Una introducción relajada de un día, sin compromiso de certificación.' },
+        beginner: { title: 'Estoy empezando y quiero aprender', description: 'Empieza con el curso de certificación SSI Freediver.' },
+        levelOne: { title: 'Tengo SSI Freediver o equivalente', description: 'Desarrolla profundidad y técnica en el siguiente nivel.' },
+        levelTwo: { title: 'Tengo SSI Advanced o equivalente', description: 'Avanza hacia las habilidades de profundidad y rendimiento.' },
+      },
+      resultEyebrow: 'Recomendado para ti',
+      duration: 'Duración',
+      depth: 'Profundidad máx.',
+      price: 'Precio',
+      prerequisiteNote: 'Tu instructor confirmará los requisitos antes de reservar.',
+      viewCourse: 'Ver detalles del curso',
+      bookCourse: 'Reservar este curso',
+      emptyTitle: 'Tu próxima inmersión empieza con una elección',
+      emptyDescription: 'Elige la opción más cercana a tu experiencia y te recomendaremos un curso SSI.',
+    },
     coursesSection: {
       badge: 'ACADEMIA OFICIAL SSI • SINAÍ DEL SUR',
       title: 'PRECISIÓN',
@@ -1832,6 +1916,27 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       submit: 'Reservierungsanfrage Senden',
       whatsappDirect: 'Direkt per WhatsApp Chatten',
       close: 'Schließen',
+    },
+    courseFinder: {
+      eyebrow: 'Kursfinder',
+      title: 'Finde den passenden Kurs für deinen nächsten Tauchgang',
+      subtitle: 'Erzähl uns von deiner Erfahrung und wir empfehlen dir den nächsten Schritt.',
+      question: 'Welche Beschreibung passt am besten zu dir?',
+      choices: {
+        try: { title: 'Ich möchte Freediving ausprobieren', description: 'Ein entspannter Einstieg an einem Tag, ganz ohne Zertifizierungsdruck.' },
+        beginner: { title: 'Ich bin neu und möchte lernen', description: 'Beginne mit dem SSI Freediver Zertifizierungskurs.' },
+        levelOne: { title: 'Ich habe SSI Freediver oder gleichwertig', description: 'Vertiefe deine Fähigkeiten und tauche im nächsten Level tiefer.' },
+        levelTwo: { title: 'Ich habe SSI Advanced oder gleichwertig', description: 'Entwickle deine Fähigkeiten für Tiefe und Performance weiter.' },
+      },
+      resultEyebrow: 'Unsere Empfehlung für dich',
+      duration: 'Dauer',
+      depth: 'Max. Tiefe',
+      price: 'Preis',
+      prerequisiteNote: 'Dein Instructor prüft die Voraussetzungen vor der Buchung.',
+      viewCourse: 'Kursdetails ansehen',
+      bookCourse: 'Diesen Kurs buchen',
+      emptyTitle: 'Dein nächster Tauchgang beginnt mit einer Auswahl',
+      emptyDescription: 'Wähle die Beschreibung, die am besten passt. Wir empfehlen dir einen passenden SSI-Kurs.',
     },
     coursesSection: {
       badge: 'OFFIZIELLE SSI AKADEMIE • SÜD-SINAI',

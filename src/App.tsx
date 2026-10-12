@@ -6,6 +6,7 @@ import { HeroSurface } from './components/home/HeroSurface';
 import { CoralDepthBackground } from './components/home/CoralDepthBackground';
 import { SSICertificates } from './components/ssi/SSICertificates';
 import { StoryTeaserBanner } from './components/home/StoryTeaserBanner';
+import { CourseFinder } from './components/home/CourseFinder';
 import { DahabBlueHoleSection } from './components/home/DahabBlueHoleSection';
 import { CoursesSection } from './components/courses/CoursesSection';
 import { TrainingSection } from './components/training/TrainingSection';
@@ -132,6 +133,12 @@ export default function App() {
             {/* 2. STORY TEASER — Meet Our Pioneers */}
             <StoryTeaserBanner
               onNavigate={navigateTo}
+            />
+
+            <CourseFinder
+              onNavigate={navigateTo}
+              onOpenBooking={handleOpenBooking}
+              currency={currency}
             />
 
             {/* Immersive Coral Depth Environment (The depth of the corals across all home sections) */}
