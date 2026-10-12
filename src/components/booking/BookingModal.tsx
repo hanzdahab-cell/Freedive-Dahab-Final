@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { X, Calendar, Sparkles, MessageCircle, ShieldCheck, Send } from 'lucide-react';
 import { ssiCourses, specialtyCourses, instructorCourses } from '../../data/courses';
 import { packagesData } from '../../data/packages';
@@ -30,6 +30,24 @@ export function BookingModal({ isOpen, onClose, initialSelectedId, currency }: B
       setSelectedId(initialSelectedId);
     }
   }, [initialSelectedId]);
+
+  // Freeze Lenis while the modal is open so the wheel scrolls the form instead
+  // of the page behind it; Escape closes the modal like a native dialog.
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  useEffect(() => {
+    if (!isOpen) return;
+    window.__lenis?.stop();
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onCloseRef.current();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => {
+      window.removeEventListener('keydown', handleKey);
+      window.__lenis?.start();
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -72,8 +90,10 @@ export function BookingModal({ isOpen, onClose, initialSelectedId, currency }: B
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-lg animate-in fade-in duration-200">
-      <div className={`glass-panel max-w-3xl w-full max-h-[92vh] overflow-y-auto rounded-3xl border border-cyan-400/40 p-6 sm:p-10 relative shadow-2xl space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}>
-        
+      <div
+        data-lenis-prevent
+        className={`glass-panel max-w-3xl w-full max-h-[92vh] overflow-y-auto rounded-3xl border border-cyan-400/40 p-6 sm:p-10 relative shadow-2xl space-y-6 ${isRtl ? 'text-right' : 'text-left'}`}
+      >
         {/* Close Button */}
         <button
           onClick={onClose}

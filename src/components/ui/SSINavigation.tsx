@@ -607,18 +607,22 @@ export function SSINavigation({
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
         
         {/* ======================================================== */}
-        {/* LEFT: Clean Logo without any effects (Prominent & Clear) */}
+        {/* LEFT: Logo with entrance motion + scroll shrink           */}
         {/* ======================================================== */}
         <button
           onClick={() => handleNavigate('home')}
           className="flex items-center shrink-0 cursor-pointer bg-transparent border-none p-0 focus:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded transition-opacity hover:opacity-95"
           aria-label="Freedive Dahab Home"
         >
-          <img
-            src="/logo-freedive-dahab.png"
-            alt="Freedive Dahab"
-            className="h-16 sm:h-20 lg:h-24 w-auto object-contain transition-transform duration-200 hover:scale-105"
-          />
+          <span className="nav-logo-motion">
+            <img
+              src="/logo-freedive-dahab.png"
+              alt="Freedive Dahab"
+              className={`h-16 sm:h-20 lg:h-24 w-auto object-contain transition-transform duration-300 hover:scale-105 ${
+                isScrolled ? 'scale-[0.9]' : 'scale-100'
+              }`}
+            />
+          </span>
         </button>
 
         {/* ======================================================== */}
@@ -683,8 +687,14 @@ export function SSINavigation({
                           </button>
                         </div>
 
-                        {/* List Items */}
-                        <div className="space-y-0.5 max-h-[420px] overflow-y-auto custom-scrollbar">
+                        {/* List Items — data-lenis-prevent keeps the wheel scrolling
+                            this list instead of the Lenis-driven page behind it;
+                            overscroll-contain stops the wheel from chaining back
+                            to the page once the list reaches its end */}
+                        <div
+                          data-lenis-prevent
+                          className="space-y-0.5 max-h-[min(420px,calc(100dvh-11rem))] overflow-y-auto overscroll-contain custom-scrollbar"
+                        >
                           {section.items.map((item, idx) => {
                             const showGroup =
                               item.group && item.group !== section.items[idx - 1]?.group;
@@ -948,7 +958,7 @@ export function SSINavigation({
       {/* MOBILE DRAWER: Scrollable with Accordion Pop-ups         */}
       {/* ======================================================== */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#0E3453]/98 backdrop-blur-2xl border-b border-white/10 px-5 py-6 space-y-3 text-sm font-sans animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto">
+        <div data-lenis-prevent className="lg:hidden bg-[#0E3453]/98 backdrop-blur-2xl border-b border-white/10 px-5 py-6 space-y-3 text-sm font-sans animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto overscroll-contain">
           
           {/* Language Switcher on Mobile with Circular Flag Signs */}
           <div className="flex flex-col pb-3 border-b border-white/10 space-y-2.5">

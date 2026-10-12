@@ -250,7 +250,9 @@ export function HeroSurface({
               preload="auto"
               aria-label="Sunlight bursting through a swirling school of fish beneath the Red Sea surface"
               style={{
-                transform: `scale(${1.06 + scrollProgress * 0.14}) translateY(${scrollProgress * -24}px)`,
+                // Source clip is 721x414 — keep the extra upscale minimal so
+                // the browser scaler doesn't soften it further.
+                transform: `scale(${1.02 + scrollProgress * 0.08}) translateY(${scrollProgress * -20}px)`,
               }}
             />
 
