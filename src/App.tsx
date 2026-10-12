@@ -3,7 +3,6 @@ import { Cursor } from './components/ui/Cursor';
 import { SSINavigation } from './components/ui/SSINavigation';
 import { PageHeader } from './components/ui/PageHeader';
 import { HeroSurface } from './components/home/HeroSurface';
-import { CinematicIntro } from './components/home/CinematicIntro';
 import { CoralDepthBackground } from './components/home/CoralDepthBackground';
 import { SSICertificates } from './components/ssi/SSICertificates';
 import { StoryTeaserBanner } from './components/home/StoryTeaserBanner';
@@ -20,6 +19,7 @@ import { TestimonialsSection } from './components/testimonials/TestimonialsSecti
 import { FAQSection } from './components/faq/FAQSection';
 import { Footer } from './components/ui/Footer';
 import { BookingModal } from './components/booking/BookingModal';
+import { ChatWidget } from './components/chat/ChatWidget';
 import { EventDetailPage } from './components/calendar/EventDetailPage';
 import { CourseDetailPage } from './components/courses/CourseDetailPage';
 import { OurStoryPage } from './components/story/OurStoryPage';
@@ -120,9 +120,6 @@ export default function App() {
         {/* ========================================================= */}
         {currentPage === 'home' && (
           <div className="page-dive-in">
-            {/* 0. CINEMATIC INTRO — navy loading screen, dive-in on click */}
-            <CinematicIntro />
-
             {/* 1. HERO: underwater vortex film + milestones + cinematic descent */}
             <HeroSurface
               onDescend={handleDescend}
@@ -409,6 +406,9 @@ export default function App() {
         initialSelectedId={bookingOfferingId}
         currency={currency}
       />
+
+      {/* EMAIL-FIRST CHAT ASSISTANT — course guidance, FAQ answers, booking requests */}
+      <ChatWidget onOpenBooking={handleOpenBooking} />
 
     </div>
     </LanguageProvider>

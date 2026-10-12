@@ -713,4 +713,76 @@ html[dir="rtl"] .font-arabic-body {
   will-change: transform, opacity;
 }
 
+/* ==========================================================================
+   NAV LOGO MOTION — entrance on load + slow ambient float
+   (introduced when the click-gate intro was removed; the navbar logo is now
+   the first branded element a visitor sees)
+   ========================================================================== */
+@keyframes nav-logo-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-22px) scale(0.92);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(3px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes nav-logo-float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+.nav-logo-motion {
+  display: inline-flex;
+  filter: drop-shadow(0 6px 18px rgba(8, 31, 53, 0.85));
+  /* Entrance first; the float takes over transform only after the entrance
+     has finished, and `backwards` (not `both`) so the final transform is not
+     pinned against the hover-scale on the <img> inside */
+  animation:
+    nav-logo-entrance 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.15s backwards,
+    nav-logo-float 6s ease-in-out 1.8s infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-logo-motion {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   FOOTER SEA PANEL — fish swimming across the ocean-blue video panel
+   ========================================================================== */
+@keyframes footer-fish-swim {
+  from {
+    transform: translateX(-90px);
+  }
+  to {
+    transform: translateX(110vw);
+  }
+}
+
+.footer-fish {
+  position: absolute;
+  left: 0;
+  animation: footer-fish-swim 30s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-fish {
+    animation: none;
+    left: 12%;
+    opacity: 0.25;
+  }
+}
+
 
