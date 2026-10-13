@@ -239,7 +239,9 @@ export interface SiteConfig {
   social: {
     instagram: string;
     facebook: string;
-    youtube: string;
-    tiktok: string;
+    youtube?: string;
+    tiktok?: string;
+    tripadvisor: string;
+    googleMaps: string;
   };
 }

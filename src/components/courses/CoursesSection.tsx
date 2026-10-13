@@ -1,16 +1,13 @@
 import { ssiCourses, specialtyCourses, instructorCourses } from '../../data/courses';
 import { PageType } from '../../types';
-import { ArrowRight, CheckCircle, ChevronRight, BookOpen, Award, Users, Waves } from 'lucide-react';
+import { ArrowRight, CheckCircle, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { TextReveal, CountUp, FadeUp, useInView } from '../ui/MotionKit';
-import { ChapterBar } from './ChapterBar';
+import { FadeUp } from '../ui/MotionKit';
 
 /* ==========================================================================
-   COURSES — Contra-report scrollytelling
-   Four chapters (01 The System · 02 Core Courses · 03 Try Freediving ·
-   04 Pro Academy) tracked by the fixed ChapterBar. Chapter headers stack an
-   elegant serif-caps line over a huge display line; a 3D bar infographic
-   compares the core course depths; numbers count up on view.
+   COURSES — compact video intro (SSI badges) → course cards directly.
+   The long chapter system, by-the-numbers depth infographic, and fixed
+   chapter progress bar were removed per owner request (2026-10-12).
    ========================================================================== */
 
 interface CoursesSectionProps {
@@ -19,103 +16,23 @@ interface CoursesSectionProps {
   currency: 'EUR' | 'USD' | 'EGP';
 }
 
-const SSI_BRIEF_POINTS = [
-  {
-    icon: BookOpen,
-    title: 'Digital manual — all languages',
-    desc: 'Study theory at your own pace in the SSI app before and during your course.',
-  },
-  {
-    icon: Award,
-    title: 'International certification',
-    desc: 'A lifetime digital SSI card recognized by dive centers in over 130 countries.',
-  },
-  {
-    icon: Users,
-    title: 'Max 3:1 student ratio',
-    desc: 'Small groups guarantee personal coaching, safety, and video feedback on every dive.',
-  },
-  {
-    icon: Waves,
-    title: 'Lighthouse Bay & Blue Hole',
-    desc: 'Shore-entry training on our home reef, and depth sessions at the world-famous Blue Hole.',
-  },
+const SSI_BADGES = [
+  { src: '/badges/ssi-freediving-center.png', alt: 'SSI Freediving Center — official partner badge' },
+  { src: '/badges/ssi-instructor-training-center.png', alt: 'SSI Instructor Training Center — official badge' },
+  { src: '/badges/ssi-mermaid-center.png', alt: 'SSI Mermaid Center — official partner badge' },
 ];
 
-/** Contra-style extruded 3D bar comparing course depths */
-function DepthBar({
-  depthMeters,
-  maxScale,
-  label,
-  delay,
-}: {
-  depthMeters: number;
-  maxScale: number;
-  label: string;
-  delay: number;
-}) {
-  const { ref, inView } = useInView<HTMLDivElement>(0.4);
-  const heightPct = Math.max((depthMeters / maxScale) * 100, 8);
+const INTRO_CHIPS = ['Beginners welcome', 'Age 10+', 'All gear included', 'Warm water year-round'];
 
+/** Small section label between card groups (replaces the big chapter headings) */
+function GroupHeading({ title, highlight }: { title: string; highlight?: string }) {
   return (
-    <div ref={ref} className="flex flex-col items-center gap-3 sm:gap-4">
-      <div className="font-bebas text-4xl sm:text-5xl text-white leading-none tracking-[0.02em]">
-        <CountUp end={depthMeters} suffix="m" />
-      </div>
-      <div className="relative w-16 sm:w-24 h-44 sm:h-56 flex items-end">
-        <div
-          className="bar3d"
-          style={{
-            height: inView ? `${heightPct}%` : '0%',
-            transitionDelay: `${delay}ms`,
-          }}
-        >
-          <div className="bar3d-front" />
-          <div className="bar3d-top" />
-          <div className="bar3d-side" />
-        </div>
-      </div>
-      <div className="font-serif italic text-ocean-pale text-sm sm:text-base text-center leading-tight">
-        {label}
-      </div>
-    </div>
-  );
-}
-
-/** Contra-style chapter heading: serif-caps eyebrow over a huge display line */
-function ChapterHeading({
-  number,
-  eyebrow,
-  title,
-  highlight,
-}: {
-  number: string;
-  eyebrow: string;
-  title: string;
-  highlight?: string;
-}) {
-  return (
-    <div className="space-y-4 mb-12 sm:mb-16">
-      <div className="flex items-center gap-4">
-        <span className="font-serif italic text-ocean-light text-xl sm:text-2xl">{number}</span>
-        <span className="h-px flex-1 bg-ocean-pale/15" />
-        <span className="font-serif italic uppercase tracking-[0.3em] text-ocean-pale text-xs sm:text-sm">
-          <TextReveal>{eyebrow}</TextReveal>
-        </span>
-      </div>
-      <h2 className="font-bebas text-white uppercase tracking-[0.04em] leading-[0.95] text-5xl sm:text-7xl md:text-8xl">
-        <TextReveal stagger={0.05}>{title}</TextReveal>
-        {highlight ? (
-          <>
-            {' '}
-            <span className="text-ocean-light">
-              <TextReveal stagger={0.05} delay={0.2}>
-                {highlight}
-              </TextReveal>
-            </span>
-          </>
-        ) : null}
-      </h2>
+    <div className="flex items-baseline gap-3 mb-8">
+      <h3 className="font-bebas text-3xl sm:text-4xl text-white uppercase tracking-[0.05em] leading-none">
+        {title}
+        {highlight ? <span className="text-ocean-light"> {highlight}</span> : null}
+      </h3>
+      <span className="h-px flex-1 bg-ocean-pale/15" />
     </div>
   );
 }
@@ -136,7 +53,6 @@ export function CoursesSection({ onOpenBooking, onNavigate, currency }: CoursesS
 
   const tryFreediving = ssiCourses.find((c) => c.id === 'ssi-basic-freediver');
   const coreCourses = ssiCourses.filter((c) => c.id !== 'ssi-basic-freediver');
-  const maxDepthScale = Math.max(...coreCourses.map((c) => c.maxDepthMeters), 1);
 
   // Categorized card collections
   const coreCards = tryFreediving ? [tryFreediving, ...coreCourses] : coreCourses;
@@ -150,130 +66,71 @@ export function CoursesSection({ onOpenBooking, onNavigate, currency }: CoursesS
 
       <div className="max-w-7xl mx-auto relative z-10 px-6">
 
-        {/* Page intro header (kept from the previous design) */}
-        <div className="pt-24 sm:pt-28 mb-20 sm:mb-24 pb-8 border-b border-ocean-pale/10">
-          <div className="flex items-center gap-3 text-xs font-alata tracking-[0.3em] uppercase text-ocean-light mb-5">
-            <span className="w-2.5 h-2.5 rounded-full bg-ocean-light animate-pulse" />
-            <span>{t('coursesSection.badge')}</span>
-          </div>
-          <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl text-white tracking-[0.05em] leading-tight uppercase">
-            <TextReveal stagger={0.04}>{t('coursesSection.title')}</TextReveal>{' '}
-            <span className="text-ocean-light">
-              <TextReveal stagger={0.04} delay={0.25}>
-                {t('coursesSection.titleHighlight')}
-              </TextReveal>
-            </span>
-          </h2>
-          <p className="text-ocean-pale/80 font-alata font-normal max-w-xl text-base sm:text-lg leading-relaxed mt-5">
-            {t('coursesSection.subtitle')}
-          </p>
-        </div>
-
         {/* ========================================================== */}
-        {/* CHAPTER 01 — THE SSI INTERNATIONAL SYSTEM                   */}
+        {/* COMPACT VIDEO INTRO — short SSI introduction + badges      */}
         {/* ========================================================== */}
-        <div id="chapter-system" className="scroll-mt-28 mb-28 sm:mb-36">
-          <ChapterHeading
-            number="01"
-            eyebrow={t('courseChapters.system')}
-            title="LEARN THE"
-            highlight="SYSTEM"
-          />
+        <div className="pt-24 sm:pt-28 mb-16 sm:mb-20">
+          <FadeUp className="relative rounded-2xl overflow-hidden border border-ocean-pale/15">
+            {/* Background video */}
+            <video
+              className="absolute inset-0 w-full h-full object-cover opacity-45"
+              src="/videos/vortex-loop.mp4"
+              poster="/videos/vortex-poster.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#081F35]/90 via-[#0E3453]/70 to-[#0E3453]/50 pointer-events-none" />
 
-          <FadeUp className="glass-panel rounded-2xl border border-ocean-pale/10 p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="space-y-5">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ocean/30 border border-ocean-light/40 text-ocean-pale text-[10px] font-mono uppercase tracking-[0.2em]">
-                THE SSI INTERNATIONAL SYSTEM
-              </span>
-              <h3 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
-                A structured path from your <span className="italic text-ocean-pale">first breath</span> to professional depth
-              </h3>
-              <p className="text-slate-300/90 font-alata font-light text-sm sm:text-base leading-relaxed">
-                Every SSI course pairs the digital academic manual — available in all languages —
-                with calm, progressive in-water sessions at Lighthouse Bay and the Blue Hole.
-                You train with high-grade equipment, learn the science of breath-holding, and
-                finish with a lifetime international certification. No fitness background needed:
-                freediving is a form of meditation, and we teach it that way.
+            <div className="relative z-10 px-6 sm:px-10 py-10 sm:py-14 space-y-6">
+              <div className="flex items-center gap-3 text-xs font-alata tracking-[0.3em] uppercase text-ocean-light">
+                <span className="w-2.5 h-2.5 rounded-full bg-ocean-light animate-pulse" />
+                <span>{t('coursesSection.badge')}</span>
+              </div>
+
+              <h2 className="font-bebas text-4xl sm:text-6xl text-white tracking-[0.05em] leading-tight uppercase">
+                {t('coursesSection.title')}{' '}
+                <span className="text-ocean-light">{t('coursesSection.titleHighlight')}</span>
+              </h2>
+
+              <p className="text-ocean-pale/90 font-alata font-light max-w-2xl text-sm sm:text-base leading-relaxed">
+                {t('coursesSection.subtitle')}
               </p>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {['Beginners welcome', 'Age 10+', 'All gear included', 'Warm water year-round'].map((chip) => (
+
+              <div className="flex flex-wrap gap-2">
+                {INTRO_CHIPS.map((chip) => (
                   <span
                     key={chip}
-                    className="px-3 py-1 rounded-full bg-white/[0.04] border border-ocean-pale/15 text-[11px] font-alata text-slate-300"
+                    className="px-3 py-1 rounded-full bg-white/[0.06] border border-ocean-pale/20 text-[11px] font-alata text-slate-200"
                   >
                     {chip}
                   </span>
                 ))}
               </div>
-            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 content-center">
-              {SSI_BRIEF_POINTS.map((point, idx) => (
-                <FadeUp
-                  key={point.title}
-                  delay={idx * 0.1}
-                  className="p-5 rounded-xl bg-[#081F35]/60 border border-ocean-pale/10 hover:border-ocean-light/40 transition-all duration-300"
-                >
-                  <point.icon className="w-5 h-5 text-ocean-light mb-3" />
-                  <div className="text-sm font-alata font-semibold text-white mb-1">{point.title}</div>
-                  <p className="text-[11px] text-slate-400 font-light leading-relaxed">{point.desc}</p>
-                </FadeUp>
-              ))}
+              {/* Small official SSI badges */}
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                {SSI_BADGES.map((badge) => (
+                  <span
+                    key={badge.src}
+                    className="inline-flex items-center rounded-lg bg-white/95 px-3 py-2 shadow-lg"
+                  >
+                    <img src={badge.src} alt={badge.alt} className="h-10 sm:h-12 w-auto object-contain" loading="lazy" />
+                  </span>
+                ))}
+              </div>
             </div>
           </FadeUp>
         </div>
 
         {/* ========================================================== */}
-        {/* CHAPTER 02 — OUR CORE COURSES + BY-THE-NUMBERS INFOGRAPHIC  */}
+        {/* CORE COURSE CARDS                                          */}
         {/* ========================================================== */}
-        <div id="chapter-core" className="scroll-mt-28 mb-28 sm:mb-36">
-          <ChapterHeading
-            number="02"
-            eyebrow={t('courseChapters.core')}
-            title="OUR CORE"
-            highlight="COURSES"
-          />
-
-          {/* By-the-numbers: 3D depth bars + ratio facts */}
-          <FadeUp className="glass-panel rounded-2xl border border-ocean-pale/10 p-8 sm:p-10 mb-14">
-            <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
-              <div className="lg:w-2/3 w-full">
-                <p className="font-serif italic uppercase tracking-[0.28em] text-ocean-pale text-xs mb-8 text-center">
-                  {t('courseChapters.numbersEyebrow')}
-                </p>
-                <div className="flex items-end justify-center gap-10 sm:gap-16 border-b border-ocean-pale/20 pb-0">
-                  {coreCourses.map((course, idx) => (
-                    <DepthBar
-                      key={course.id}
-                      depthMeters={course.maxDepthMeters}
-                      maxScale={maxDepthScale}
-                      label={course.title}
-                      delay={idx * 180}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              <div className="lg:w-1/3 w-full grid grid-cols-2 lg:grid-cols-1 gap-6">
-                <div className="border-l-2 border-ocean-light/50 pl-4">
-                  <div className="font-bebas text-5xl text-white leading-none">
-                    <CountUp end={3} />:1
-                  </div>
-                  <div className="text-[11px] uppercase tracking-[0.18em] text-ocean-pale/80 font-alata mt-1">
-                    {t('courseChapters.ratioLabel')}
-                  </div>
-                </div>
-                <div className="border-l-2 border-ocean-light/50 pl-4">
-                  <div className="font-bebas text-5xl text-white leading-none">
-                    <CountUp end={130} suffix="+" />
-                  </div>
-                  <div className="text-[11px] uppercase tracking-[0.18em] text-ocean-pale/80 font-alata mt-1">
-                    {t('courseChapters.countriesLabel')}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </FadeUp>
+        <div id="chapter-core" className="scroll-mt-28 mb-24 sm:mb-32">
+          <GroupHeading title="SSI" highlight="Core Courses" />
 
           {/* Course cards — the full core path: Try + Level 1/2/3 */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -372,13 +229,8 @@ export function CoursesSection({ onOpenBooking, onNavigate, currency }: CoursesS
         {/* ========================================================== */}
         {/* CHAPTER 03 — SPECIALTY CLINICS                              */}
         {/* ========================================================== */}
-        <div id="chapter-try" className="scroll-mt-28 mb-28 sm:mb-36">
-          <ChapterHeading
-            number="03"
-            eyebrow={t('courseChapters.try')}
-            title="SPECIALTY"
-            highlight="CLINICS"
-          />
+        <div id="chapter-try" className="scroll-mt-28 mb-24 sm:mb-32">
+          <GroupHeading title="Specialty" highlight="Clinics" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {specialtyCards.map((course, idx) => (
@@ -425,12 +277,7 @@ export function CoursesSection({ onOpenBooking, onNavigate, currency }: CoursesS
         {/* CHAPTER 04 — MASTER & PRO ACADEMY                           */}
         {/* ========================================================== */}
         <div id="chapter-pro" className="scroll-mt-28">
-          <ChapterHeading
-            number="04"
-            eyebrow={t('courseChapters.pro')}
-            title="MASTER & PRO"
-            highlight="ACADEMY"
-          />
+          <GroupHeading title="Master & Pro" highlight="Academy" />
 
           {/* Master Freediver — feature card */}
           {masterCourse && (
@@ -552,9 +399,6 @@ export function CoursesSection({ onOpenBooking, onNavigate, currency }: CoursesS
         </div>
 
       </div>
-
-      {/* Fixed bottom chapter progress (Contra-style) */}
-      <ChapterBar />
     </section>
   );
 }
